@@ -1,0 +1,8 @@
+18:38:59 **** Rebuild of configuration Debug for project Module2_StatisticClass ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Statistic.o" "..\\src\\Statistic.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Main.o" "..\\src\\Main.cpp" 
+g++ -o Module2_StatisticClass.exe "src\\Statistic.o" "src\\Main.o" 
+
+18:39:01 Build Finished (took 1s.69ms)
+

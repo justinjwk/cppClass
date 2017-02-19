@@ -1,0 +1,7 @@
+18:38:59 **** Rebuild of configuration Debug for project Module1_TriangleTest ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module1_TriangleTest.o" "..\\src\\Module1_TriangleTest.cpp" 
+g++ -o Module1_TriangleTest.exe "src\\Module1_TriangleTest.o" 
+
+18:38:59 Build Finished (took 690ms)
+

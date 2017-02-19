@@ -1,0 +1,7 @@
+18:38:58 **** Rebuild of configuration Debug for project HelloWorldCPP ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\HelloWorldCPP.o" "..\\src\\HelloWorldCPP.cpp" 
+g++ -o HelloWorldCPP.exe "src\\HelloWorldCPP.o" 
+
+18:38:59 Build Finished (took 684ms)
+

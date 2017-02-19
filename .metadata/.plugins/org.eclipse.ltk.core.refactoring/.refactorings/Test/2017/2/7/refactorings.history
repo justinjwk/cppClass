@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Test/src/Module3_TicTacToe.cpp&apos; to &apos;TicTacToe.cpp&apos;" description="Rename resource &apos;Module3_TicTacToe.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Module3_TicTacToe.cpp" name="TicTacToe.cpp" stamp="1486893988881" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Test/src/TicTackToe.h&apos; to &apos;TicTacToe.h&apos;" description="Rename resource &apos;TicTackToe.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/TicTackToe.h" name="TicTacToe.h" stamp="1486894324955" updateReferences="true"/>
+</session>

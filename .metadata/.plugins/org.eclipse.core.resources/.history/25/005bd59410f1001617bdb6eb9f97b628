@@ -1,0 +1,16 @@
+/*
+ * TicTackToe.h
+ *
+ *  Created on: Feb 12, 2017
+ *      Author: Justin
+ */
+
+class TicTacToe {
+public:
+	void initializeGame() const;
+
+private:
+	char board[3][3];
+	char player;
+	int turnNum;
+};

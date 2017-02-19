@@ -1,0 +1,107 @@
+18:39:02 **** Rebuild of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TicTacToe.o" "..\\src\\TicTacToe.cpp" 
+In file included from ..\src\TicTacToe.cpp:11:0:
+..\src\TicTacToe.h:11:20: error: only declarations of constructors and conversion operators can be 'explicit'
+  explicit TicTacTo();
+                    ^
+..\src\TicTacToe.cpp:16:22: error: definition of implicitly-declared 'TicTacToe::TicTacToe()'
+ TicTacToe::TicTacToe(): player('X'), turnNum(0)
+                      ^
+..\src\TicTacToe.cpp:35:27: error: no 'void TicTacToe::resetTurn()' member function declared in class 'TicTacToe'
+ void TicTacToe::resetTurn() {
+                           ^
+..\src\TicTacToe.cpp:42:25: error: no 'void TicTacToe::addTurn()' member function declared in class 'TicTacToe'
+ void TicTacToe::addTurn() {
+                         ^
+..\src\TicTacToe.cpp: In function 'int getTurn()':
+..\src\TicTacToe.cpp:50:9: error: 'turnNum' was not declared in this scope
+  return turnNum;
+         ^
+..\src\TicTacToe.cpp: In function 'char getPlayer()':
+..\src\TicTacToe.cpp:57:9: error: 'player' was not declared in this scope
+  return player;
+         ^
+..\src\TicTacToe.cpp: In function 'void setPlayer(char)':
+..\src\TicTacToe.cpp:64:2: error: 'player' was not declared in this scope
+  player = playerIn;
+  ^
+..\src\TicTacToe.cpp: In function 'void resetBoard()':
+..\src\TicTacToe.cpp:73:4: error: 'board' was not declared in this scope
+    board[i][j] = ' ';
+    ^
+..\src\TicTacToe.cpp: In function 'void initializeGame()':
+..\src\TicTacToe.cpp:83:12: error: 'resetTurn' was not declared in this scope
+  resetTurn();
+            ^
+..\src\TicTacToe.cpp: In function 'void drawBoard()':
+..\src\TicTacToe.cpp:104:12: error: 'board' was not declared in this scope
+    cout << board[i][j] << " | ";
+            ^
+..\src\TicTacToe.cpp: In function 'bool isCellTaken(int, int)':
+..\src\TicTacToe.cpp:135:6: error: 'board' was not declared in this scope
+  if (board[raw - 1][col - 1] == ' ') {
+      ^
+..\src\TicTacToe.cpp: In function 'void userTurn()':
+..\src\TicTacToe.cpp:173:2: error: 'board' was not declared in this scope
+  board[row - 1][col - 1] = player;
+  ^
+..\src\TicTacToe.cpp:173:28: error: 'player' was not declared in this scope
+  board[row - 1][col - 1] = player;
+                            ^
+..\src\TicTacToe.cpp: In function 'void computerTurn()':
+..\src\TicTacToe.cpp:215:2: error: 'board' was not declared in this scope
+  board[raw - 1][col - 1] = player;
+  ^
+..\src\TicTacToe.cpp:215:28: error: 'player' was not declared in this scope
+  board[raw - 1][col - 1] = player;
+                            ^
+..\src\TicTacToe.cpp: In function 'char whoIsWin()':
+..\src\TicTacToe.cpp:228:6: error: 'board' was not declared in this scope
+  if (board[0][0] == board[0][1] && board[0][1] == board[0][2]) {
+      ^
+..\src\TicTacToe.cpp:242:6: error: 'board' was not declared in this scope
+  if (board[1][0] == board[1][1] && board[1][1] == board[1][2]) {
+      ^
+..\src\TicTacToe.cpp:253:6: error: 'board' was not declared in this scope
+  if (board[2][0] == board[2][1] && board[2][1] == board[2][2]) {
+      ^
+..\src\TicTacToe.cpp:264:6: error: 'board' was not declared in this scope
+  if (board[0][0] == board[1][0] && board[1][0] == board[2][0]) {
+      ^
+..\src\TicTacToe.cpp:275:6: error: 'board' was not declared in this scope
+  if (board[0][1] == board[1][1] && board[1][1] == board[2][1]) {
+      ^
+..\src\TicTacToe.cpp:286:6: error: 'board' was not declared in this scope
+  if (board[0][2] == board[1][2] && board[1][2] == board[2][2]) {
+      ^
+..\src\TicTacToe.cpp:297:6: error: 'board' was not declared in this scope
+  if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+      ^
+..\src\TicTacToe.cpp:308:6: error: 'board' was not declared in this scope
+  if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+      ^
+..\src\TicTacToe.cpp: In function 'int main()':
+..\src\TicTacToe.cpp:334:7: error: 'turnNum' was not declared in this scope
+   if (turnNum < 9) {
+       ^
+..\src\TicTacToe.cpp:336:12: error: 'addTurn' was not declared in this scope
+    addTurn();
+            ^
+..\src\TicTacToe.cpp:353:7: error: 'turnNum' was not declared in this scope
+   if (turnNum < 9) {
+       ^
+..\src\TicTacToe.cpp:355:12: error: 'addTurn' was not declared in this scope
+    addTurn();
+            ^
+..\src\TicTacToe.cpp:371:10: error: 'turnNum' was not declared in this scope
+  } while(turnNum < 9); // loop until turn number is less than 9
+          ^
+..\src\TicTacToe.cpp: In function 'bool isCellTaken(int, int)':
+..\src\TicTacToe.cpp:141:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+18:39:03 Build Finished (took 734ms)
+

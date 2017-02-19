@@ -1,0 +1,464 @@
+//============================================================================
+// Name        : Module4_Poker.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <algorithm>
+#include <string>
+
+#include "time.h"
+using namespace std;
+
+const int NUMBER_OF_CARDS = 52;
+const int NUMBER_OF_RANK = 13;
+const int NUMBER_OF_SUIT = 4;
+const int NUMBER_OF_HAND = 5;
+
+const int STRAIGHT_FLUSH = 1;
+const int FOUR_OF_A_KIND = 2;
+const int FULL_HOUSE = 3;
+const int FLUSH = 4;
+const int STRAIGHT = 5;
+const int THREE_OF_A_KIND = 6;
+const int TWO_PAIR = 7;
+const int ONE_PAIR = 8;
+const int HIGH_CARD = 9;
+
+int deck[NUMBER_OF_CARDS];
+
+string rank[NUMBER_OF_RANK] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+string suit[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+
+string playerRank[NUMBER_OF_HAND] = {"J", "10", "9", "8", "7"};
+string playerSuit[NUMBER_OF_HAND] = {"S", "S", "S", "S", "S"};
+int sortedPlayerRank[NUMBER_OF_HAND] = {7, 8, 9, 10, 11};
+
+string computerRank[NUMBER_OF_HAND] = {"10", "9", "8", "7", "6"};
+string computerSuit[NUMBER_OF_HAND] = {"H", "H", "H", "H", "H"};
+int sortedComputerRank[NUMBER_OF_HAND] = {6, 7, 8, 9, 10};
+
+
+
+
+/**
+ * This method create a deck of 52 cards
+ */
+void createDeck() {
+	for(int i = 0; i < NUMBER_OF_CARDS; i ++) {
+		deck[i] = i;
+	}
+}
+
+
+
+/**
+ * This method shuffles a deck of 52 cards
+ */
+void shuffleDeck() {
+	srand(time(0));
+	random_shuffle(&deck[0], &deck[52]);
+}
+
+/**
+ * This method prints a deck
+ */
+void printDeck() {
+	for(int i = 0; i < NUMBER_OF_CARDS; i++) {
+		int rankNum = deck[i] % 13; // 0 ~ 12
+		int suitNum = deck[i] / 13; // 0 ~ 3
+		cout << rank[rankNum] << suit[suitNum] << " ";
+	}
+	cout << endl;
+}
+
+void convertPlayerArrayToSortedIntArray(string rankIn[5]) {
+
+	// A will be treated differently if there is a K in hand
+	bool hasK = false;
+
+	// loop through to find existence of K card in the hand
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		if (rankIn[i].compare("K") == 0) {
+			hasK = true;
+		}
+	}
+
+	// loop rank array to convert string to integer
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		// J to 11
+		if (rankIn[i].compare("J") == 0) {
+			sortedPlayerRank[i] = 11;
+		}
+		// Q to 12
+		else if (rankIn[i].compare("Q") == 0) {
+			sortedPlayerRank[i] = 12;
+		}
+		// K to 13
+		else if (rankIn[i].compare("K") == 0) {
+			sortedPlayerRank[i] = 13;
+		}
+		// for A
+		else if (rankIn[i].compare("A") == 0) {
+			// If there is a K in the hand, then A is 14
+			if(hasK) {
+				sortedPlayerRank[i] = 14;
+			}
+			// If there is not a K in the hand, then A is 1
+			else {
+				sortedPlayerRank[i] = 1;
+			}
+		}
+		// other cases
+		else {
+			// convert string to integer
+			sortedPlayerRank[i] = atoi(rankIn[i].c_str());
+		}
+	}
+
+	// sort int array for easy comparison
+	sort(&sortedPlayerRank[0], &sortedPlayerRank[5]);
+
+}
+
+void convertComputerArrayToSortedIntArray(string rankIn[5]) {
+
+	// A will be treated differently if there is a K in hand
+	bool hasK = false;
+
+	// loop through to find existence of K card in the hand
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		if (rankIn[i].compare("K") == 0) {
+			hasK = true;
+		}
+	}
+
+	// loop rank array to convert string to integer
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		// J to 11
+		if (rankIn[i].compare("J") == 0) {
+			sortedComputerRank[i] = 11;
+		}
+		// Q to 12
+		else if (rankIn[i].compare("Q") == 0) {
+			sortedComputerRank[i] = 12;
+		}
+		// K to 13
+		else if (rankIn[i].compare("K") == 0) {
+			sortedComputerRank[i] = 13;
+		}
+		// for A
+		else if (rankIn[i].compare("A") == 0) {
+			// If there is a K in the hand, then A is 14
+			if(hasK) {
+				sortedComputerRank[i] = 14;
+			}
+			// If there is not a K in the hand, then A is 1
+			else {
+				sortedComputerRank[i] = 1;
+			}
+		}
+		// other cases
+		else {
+			// convert string to integer
+			sortedComputerRank[i] = atoi(rankIn[i].c_str());
+		}
+	}
+
+	// sort int array for easy comparison
+	sort(&sortedComputerRank[0], &sortedComputerRank[5]);
+
+}
+
+/**
+ * This method deals 5 cards to user and computer
+ */
+void dealCards() {
+
+	int playerCardCounter = 0;
+	int computerCardCounter = 0;
+
+	// take first 10 cards from the deck to deal
+	for(int i = 0; i < 10; i++) {
+		int rankNum = deck[i] % 13;
+		int suitNum = deck[i] / 13;
+
+		// if odd number of turn, deal the card to user
+		if ((i % 2) == 0) {
+			playerRank[playerCardCounter] = rank[rankNum];
+			playerSuit[playerCardCounter] = suit[suitNum];
+			playerCardCounter++;
+
+		}
+		// if even number of turn, deal the card to computer
+		else {
+			computerRank[computerCardCounter] = rank[rankNum];
+			computerSuit[computerCardCounter] = suit[suitNum];
+			computerCardCounter++;
+		}
+	}
+
+	convertPlayerArrayToSortedIntArray(playerRank);
+	convertComputerArrayToSortedIntArray(computerRank);
+}
+
+/**
+ * This method prints Player's cards
+ */
+void printPlayerHand() {
+
+	cout << "Player's hand : " ;
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		cout << playerRank[i] << playerSuit[i] << " ";
+	}
+	cout << endl;
+}
+
+/**
+ * This method prints Computer's cards
+ */
+void printComputerHand() {
+
+	cout << "Computer's hand : ";
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+		cout << computerRank[i] << computerSuit[i] << " ";
+	}
+	cout << endl;
+}
+
+/**
+ * This method finds out flush cards
+ */
+int flush(string suitIn[NUMBER_OF_HAND]) {
+
+	// if every card's suit is the same, then it's flush
+	if ((suitIn[0].compare(suitIn[1]) == 0)
+			&& (suitIn[1].compare(suitIn[2]) == 0)
+			&& (suitIn[2].compare(suitIn[3]) == 0)
+			&& (suitIn[3].compare(suitIn[4]) == 0)) {
+		return FLUSH;
+	}
+	else {
+		return 0;
+	}
+}
+
+/*
+ * This method finds straight card
+ */
+int straight(int rankIn[NUMBER_OF_HAND]) {
+
+	bool isStraight = true;
+
+	// find out whether two neighbor numbers are continuous number
+	for(int i = 0; i < 4; i++) {
+		if(rankIn[i+1] - rankIn[i] != 1) {
+			isStraight = false;
+			break;
+		}
+	}
+
+	// return STRAIGHT if it is straight card
+	if(isStraight) {
+		return STRAIGHT;
+	}
+	else {
+		return 0;
+	}
+}
+
+/**
+ * This method finds Straight Flush cards
+ */
+int straightFlush(int rankIn[NUMBER_OF_HAND], string suitIn[NUMBER_OF_HAND]) {
+
+	// If both Flush and Straight are true, then it's Straight Flush
+	if(flush(suitIn) && straight(rankIn)) {
+		return STRAIGHT_FLUSH;
+	}
+	else {
+		return 0;
+	}
+}
+
+/**
+ * This method counts how many pairs in hand
+ * If there are 4 same rank cards, it returns FOUR_OF_A_KIND
+ * If there are 3 same rank cards with one pair, it returns FULL_HOUSE
+ * If there are only 3 same rank cards, it returns THREE_OF_A_KIND
+ * If there are more than one one-pair, it returns TWO_PAIR
+ * If there are only one one-pair, it returns ONE_PAIR
+ */
+int pairCounter(int rankIn[NUMBER_OF_HAND]) {
+
+	// to see how many pairs are in hand and where they are
+	int counter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	// loop rank array to count how many the same ranks are in a hand
+	for(int i = 0; i < NUMBER_OF_HAND; i++) {
+
+		int num;
+
+		num = rankIn[i];
+		counter[num - 1] = counter[num - 1] + 1;
+	}
+
+	int fourOfKind = 0;
+	int threeOfKind = 0;
+	int pair = 0;
+
+	// loop through counter array
+	for(int i = 0; i < 13; i++) {
+		// if there are 4 same cards
+		if (counter[i] == 4) {
+			fourOfKind += 1;
+		}
+		// if there are 3 same cards
+		if (counter[i] == 3) {
+			threeOfKind += 1;
+		}
+		// if there are 2 same cards
+		if (counter[i] == 2) {
+			pair += 1;
+		}
+	}
+
+	// If there are 4 same cards, return FOUR_OF_A_KIND
+	if (fourOfKind == 1) {
+		return FOUR_OF_A_KIND;
+	}
+	// If there are 3 same cards
+	else if (threeOfKind == 1) {
+		// and there is a pair, return FULL_HOUSE;
+		if(pair > 0) {
+			return FULL_HOUSE;
+		}
+		// if there is no additional pair, return THREE_OF_A_KIND;
+		else {
+			return THREE_OF_A_KIND;
+		}
+	}
+	// If there are two of one pair, return TWO_PAIR
+	else if (pair == 2) {
+		return TWO_PAIR;
+	}
+	// IF there is only one one pair, return ONE_PAIR
+	else if (pair == 1) {
+		return ONE_PAIR;
+	}
+	// Otherwise, return HIGH_CARD
+	else {
+		return HIGH_CARD;
+	}
+}
+
+int getRank(int rankIn[5], string suitIn[5]) {
+
+	// return scores based on their combination
+	// 0 - high, 9 - low
+	if(straightFlush(rankIn, playerSuit) > 0) {
+		return STRAIGHT_FLUSH;
+	}
+	else if(flush(playerSuit) > 0) {
+		return FLUSH;
+	}
+	else if(straight(rankIn) > 0) {
+		return STRAIGHT;
+	}
+	else {
+		return pairCounter(rankIn);
+	}
+
+}
+
+void displayResult(int rankScore) {
+
+	switch(rankScore) {
+	case 1 : cout << "Straight Flush!" << endl;
+			 break;
+	case 2 : cout << "Four of a Kind!" << endl;
+			 break;
+	case 3 : cout << "Full House!" << endl;
+			 break;
+	case 4 : cout << "Flush!" << endl;
+			 break;
+	case 5 : cout << "Straight!" << endl;
+			 break;
+	case 6 : cout << "Three of a Kind!" << endl;
+			 break;
+	case 7 : cout << "Two Pair!" << endl;
+			 break;
+	case 8 : cout << "One Pair!" << endl;
+			 break;
+	case 9 : cout << "High Card!" << endl;
+			 break;
+	default : break;
+	}
+}
+
+void playGame() {
+
+	int playerScore;
+	int computerScore;
+
+	playerScore = getRank(sortedPlayerRank, playerSuit);
+
+	//
+	cout << playerScore << endl;
+	for (int i = 0; i < 5; i ++) {
+		cout << sortedPlayerRank[i] << " ";
+	}
+
+	computerScore = getRank(sortedComputerRank, computerSuit);
+
+	// if player has better combination
+	if(playerScore < computerScore) {
+		cout << "Player Win! - ";
+		displayResult(playerScore);
+	}
+	// if computer has better combination
+	else if (playerScore > computerScore) {
+		cout << "Computer Win! - ";
+		displayResult(computerScore);
+	}
+	// if both have the same combination, then compare details
+	else {
+		if (playerScore == 1) {
+			if(sortedPlayerRank[5] > sortedComputerRank[5]) {
+				cout << "Player Win! - ";
+				displayResult(playerScore);
+			}
+			else if (sortedPlayerRank[5] < sortedComputerRank[5]) {
+				cout << "Computer Win! - ";
+			}
+		}
+	}
+}
+
+
+
+int main() {
+
+	createDeck();
+	shuffleDeck();
+	//dealCards();
+
+	playerRank = {"J", "10", "9", "8", "7"};
+	playerSuit = {"S", "S", "S", "S", "S"};
+	computerRank = {"10", "9", "8", "7", "6"};
+	computerSuit = {"H", "H", "H", "H", "H"};
+
+	printPlayerHand();
+	printComputerHand();
+
+	playGame();
+
+	//straight(sortedPlayerRank);
+
+	return 0;
+}

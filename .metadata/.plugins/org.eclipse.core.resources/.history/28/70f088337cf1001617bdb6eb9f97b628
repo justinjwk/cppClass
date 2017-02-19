@@ -1,0 +1,18 @@
+/*
+ * TicTacToe.cpp
+ *
+ *  Created on: Feb 12, 2017
+ *      Author: Justin
+ */
+
+#include "TicTacToe.h"
+
+TicTacToe::TicTacToe() {
+	// TODO Auto-generated constructor stub
+
+}
+
+TicTacToe::~TicTacToe() {
+	// TODO Auto-generated destructor stub
+}
+

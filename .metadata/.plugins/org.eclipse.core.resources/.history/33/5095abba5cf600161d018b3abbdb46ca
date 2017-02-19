@@ -1,0 +1,14 @@
+/*
+ * Hand.h
+ *
+ *  Created on: Feb 18, 2017
+ *      Author: Justin
+ */
+
+class Hand {
+public:
+	Hand();
+
+};
+
+

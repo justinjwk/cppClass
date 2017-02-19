@@ -1,0 +1,34 @@
+//============================================================================
+// Name        : Module2_StatisticClass.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+class Statistic {
+
+public:
+
+	void displayWelcomeMsg() const {
+		cout << "==========================================================\n";
+		cout << "              Welcome to Statistic Program!\n";
+		cout << "This program calculates an average and standard deviation\n";
+		cout << "==========================================================\n";
+	}
+
+private:
+
+};
+
+int main() {
+
+	// create a Statistic object named stat
+	Statistic stat;
+
+	// call object's displayWelcomeMsg function
+	stat.displayWelcomeMsg();
+}
