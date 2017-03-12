@@ -1,0 +1,71 @@
+//============================================================================
+// Name        : Module6_Probability.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Probability.h"
+
+using namespace std;
+
+
+Probability::Probability(double probIn)
+{
+	setProbability(probIn);
+}
+
+double Probability::getProbability() const
+{
+	return probability;
+}
+
+void Probability::setProbability(double probIn)
+{
+	if(probIn >=0 && probIn <=1)
+	{
+		probability = probIn;
+	}
+	else
+	{
+		throw invalid_argument("Event ranges should be from 0.0(never) to 1.0(certain)");
+
+	}
+}
+
+double operator+(Probability eventA, Probability eventB)
+{
+	return (eventA.getProbability() + eventB.getProbability());
+}
+
+
+
+double operator&(Probability eventA, Probability eventB)
+{
+	return (eventA.getProbability() * eventB.getProbability());
+}
+
+double operator|(Probability eventA, Probability eventB)
+{
+//	return (eventA.getProbability() + eventB.getProbability())
+//			- (eventA.getProbability() * eventB.getProbability());
+
+	return ((eventA + eventB) - (eventA & eventB));
+}
+
+double operator~(Probability eventA)
+{
+	return (1 - eventA.getProbability());
+}
+
+double operator^(Probability eventA, Probability eventB)
+{
+	return (eventA & (~eventB)) + (eventB & (~eventA));
+}
+
+double operator-(Probability eventA, Probability eventB)
+{
+	return (eventA & (~eventB)) + (eventB & (~eventA));
+}

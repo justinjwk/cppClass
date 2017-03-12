@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Module4_Poker/src/Module4_Poker.cpp&apos; to &apos;Poker.cpp&apos;" description="Rename resource &apos;Module4_Poker.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Module4_Poker.cpp" name="Poker.cpp" stamp="1487545773182" updateReferences="true"/>
+</session>

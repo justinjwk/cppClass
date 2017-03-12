@@ -1,0 +1,28 @@
+/*
+ * Event.h
+ *
+ *  Created on: Mar 11, 2017
+ *      Author: Justin
+ */
+
+#ifndef PROBABILITY_H_
+#define PROBABILITY_H_
+
+#include<iostream>
+
+class Probability
+{
+public:
+
+	Probability(double event);
+
+	double getProbability() const;
+	void setProbability();
+
+private:
+	double probability;
+};
+
+
+
+#endif /* EVENT_H_ */

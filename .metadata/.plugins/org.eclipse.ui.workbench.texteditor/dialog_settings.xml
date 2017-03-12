@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="shuffle" key="selection"/>
+		<item value="board" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="shuffle"/>
-			<item value="pair counter"/>
-			<item value="cout"/>
-			<item value="playerScore"/>
-			<item value="pairCounter"/>
-			<item value="convert"/>
+			<item value="board"/>
+			<item value="Three_of_a"/>
+			<item value="three"/>
+			<item value="straightflush"/>
 			<item value="straight"/>
-			<item value="return"/>
+			<item value="playGame"/>
+			<item value="play"/>
+			<item value="getRank"/>
 		</list>
 		<list key="replacehistory">
 			<item value="NUMBER_OF_HAND"/>

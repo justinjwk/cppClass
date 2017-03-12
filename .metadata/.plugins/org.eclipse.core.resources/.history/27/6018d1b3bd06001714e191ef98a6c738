@@ -1,0 +1,209 @@
+//============================================================================
+// Name        : Probability.cpp
+// Author      : Justin Kim
+// Description : This class is a Probability class
+//				 that implements the Probability of independent events.
+//				 This class has following operators and calculates possibilities
+//				 A & B is the probability of both A and B occurring,
+//				 A | B is the probability of either A or B occurring,
+//				 A ^ B is the probability of either A or B but not both occurring,
+//				 A – B is the probability of A but not B occurring,
+//				 ~ A is the probability of A not occurring.
+//============================================================================
+
+#include <iostream>
+#include "Probability.h"
+
+using namespace std;
+
+/**
+ * constructor: receive probability
+ */
+Probability::Probability(double probIn)
+{
+	setProbability(probIn);
+}
+
+/**
+ * getter for probability
+ * return probability
+ */
+double Probability::getProbability() const
+{
+	return probability;
+}
+
+/**
+ * setter for probability
+ * Error check: only accept a number between 0.0 and 1.0
+ * 				or print an error message and assign default value
+ */
+void Probability::setProbability(double probIn)
+{
+	// Error check
+	// If event rage is from 0.0 to 1.0, then assign it
+	if(probIn >=NEVER && probIn <=CERTAIN)
+	{
+		probability = probIn;
+	}
+	// If event rage is greater than 1.0, then print an error message
+	// and assign default value(1.0)
+	else if(probIn > CERTAIN)
+	{
+		cout << "Event ranges should be from 0.0(never) to 1.0(certain). Event is set to 1" << endl;
+		probability = CERTAIN;
+
+	}
+	// If event range is less than 0.0, then print an error message
+	// and assign default value(0.0)
+	else
+	{
+		cout << "Event ranges should be from 0.0(never) to 1.0(certain). Event is set to 0" << endl;
+		probability = NEVER;
+	}
+}
+
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator&(Probability eventA, Probability eventB)
+{
+	// P and B = P(A) x P(B)
+	return eventA.getProbability() * eventB.getProbability();
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator|(Probability eventA, Probability eventB)
+{
+	return ((eventA + eventB) - (eventA & eventB));
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator~(Probability eventA)
+{
+	return (1 - eventA.getProbability());
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator^(Probability eventA, Probability eventB)
+{
+	return (eventA & (~eventB)) + (eventB & (~eventA));
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator-(Probability eventA, Probability eventB)
+{
+	return (eventA - (eventA & eventB));
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator+(Probability eventA, Probability eventB)
+{
+	return (eventA.getProbability() + eventB.getProbability());
+}
+
+/**
+ * operator overloading for A & B
+ * case for both A and B occurring
+ * A and B = P(A) x P(B)
+ */
+double operator-(Probability eventA, double eventB)
+{
+	return eventA.getProbability() - eventB;
+}
+
+
+/*
+
+double multiple(double a, double b) {
+	return a * b;
+}
+
+double add(double a, double b) {
+	return a + b;
+}
+
+double sub(double a, double b) {
+	return a - b;
+}
+
+//
+Probability operator&(Probability eventA, Probability eventB)
+{
+	// P and B = P(A) x P(B)
+	Probability result(
+			multiple(
+					eventA.getProbability(),	// P(A)
+					eventB.getProbability()		// P(B)
+			)
+	);
+	return result;
+}
+
+//
+Probability operator|(Probability eventA, Probability eventB)
+{
+	// P or B = (P(A) + P(B)) - P(A and B)
+	Probability result(
+			sub(
+					add(
+							eventA.getProbability(),	// P(A)
+							eventB.getProbability()		// P(B)
+					),
+					(eventA & eventB).getProbability())	// P(A and B)
+	);
+	return result;
+}
+
+//
+Probability operator~(Probability eventA)
+{
+	// A not occuring = 1 - P(A)
+	Probability result(
+			sub(
+					1,							// 1
+					eventA.getProbability()		// P(A)
+			)
+	);
+	return result;
+}
+
+
+
+Probability operator^(Probability eventA, Probability eventB)
+{
+	// Either A or B but not both = P(A and ~B) + P(P and ~A)
+	Probability result(
+			add(
+					(eventA & (~eventB)).getProbability(),	// A and ~B
+					(eventB & (~eventA)).getProbability()	// B and ~A
+			)
+	);
+	return result;
+}
+*/
+
+

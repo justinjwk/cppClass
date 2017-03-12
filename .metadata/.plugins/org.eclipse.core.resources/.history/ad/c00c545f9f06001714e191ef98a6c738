@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : Module6_Probability.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	Probability eventA(0.8);
+	Probability eventB(0.9);
+
+
+
+}
