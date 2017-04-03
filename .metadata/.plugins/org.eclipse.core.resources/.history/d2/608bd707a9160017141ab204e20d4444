@@ -1,0 +1,64 @@
+//============================================================================
+// Name        : Module8_ExpressionTree.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+class Node {
+
+public:
+
+	virtual double evaluate() = 0;
+};
+
+class Constant: public Node {
+
+	double number;
+
+public:
+
+	Constant(double value) {
+		number = value;
+
+	}
+
+	double evaluate() {
+		return number;
+	}
+
+};
+
+class Variable: public Node {
+
+	double number;
+	string variable;
+
+public:
+	Variable(double value) {
+		number = value;
+	}
+
+	Variable(string const& v) : variable(v) {
+
+	}
+
+	double evaluate() {
+		return number;
+	}
+
+	string getVariable() {
+		return variable;
+	}
+};
+
+
+
+int main() {
+
+}

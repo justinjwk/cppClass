@@ -9904,3 +9904,683 @@ Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Probability.o" "..\\src\\Probability.cpp" 
 g++ -o Module6_Probability.exe "src\\Probability.o" "src\\Module6_main.o" 
 Info: Nothing to build for Module6_Probability
+03:07:03 **** Rebuild of configuration Debug for project Examples ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Examples.o" "..\\src\\Examples.cpp" 
+g++ -o Examples.exe "src\\Examples.o" 
+Info: Nothing to build for Module6_Probability
+03:07:04 **** Rebuild of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+12:30:34 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+12:31:00 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:125:7: error: cannot declare variable 't' to be of abstract type 'Tree'
+  Tree t(Add(new Constant(1.0), new Constant(4.0)));
+       ^
+..\src\Module8_ExpressionTree.cpp:61:7: note:   because the following virtual functions are pure within 'Tree':
+ class Tree : public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:17:17: note: 	virtual double Node::evaluate()
+  virtual double evaluate() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:127:7: error: no match for 'operator<<' (operand types are 'std::ostream {aka std::basic_ostream<char>}' and 'Tree')
+  cout << t;
+       ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:108:7: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:117:7: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:127:7: note:   no known conversion for argument 1 from 'Tree' to 'std::ios_base& (*)(std::ios_base&)'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:166:7: note:   no known conversion for argument 1 from 'Tree' to 'long int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:170:7: note:   no known conversion for argument 1 from 'Tree' to 'long unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:174:7: note:   no known conversion for argument 1 from 'Tree' to 'bool'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:91:5: note:   no known conversion for argument 1 from 'Tree' to 'short int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:181:7: note:   no known conversion for argument 1 from 'Tree' to 'short unsigned int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:105:5: note:   no known conversion for argument 1 from 'Tree' to 'int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:192:7: note:   no known conversion for argument 1 from 'Tree' to 'unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:201:7: note:   no known conversion for argument 1 from 'Tree' to 'long long int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:205:7: note:   no known conversion for argument 1 from 'Tree' to 'long long unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:220:7: note:   no known conversion for argument 1 from 'Tree' to 'double'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:224:7: note:   no known conversion for argument 1 from 'Tree' to 'float'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:232:7: note:   no known conversion for argument 1 from 'Tree' to 'long double'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:245:7: note:   no known conversion for argument 1 from 'Tree' to 'const void*'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:119:5: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
+..\src\Module8_ExpressionTree.cpp:100:10: note: candidate: std::ostream& operator<<(std::ostream&, const Add&)
+ ostream& operator<<(ostream& os, const Add& add) {
+          ^
+..\src\Module8_ExpressionTree.cpp:100:10: note:   no known conversion for argument 2 from 'Tree' to 'const Add&'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:574:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const unsigned char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:569:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const signed char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:556:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:539:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   mismatched types 'const _CharT*' and 'Tree'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:519:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'unsigned char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:514:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'signed char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:508:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:502:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:497:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   deduced conflicting types for parameter '_CharT' ('char' and 'Tree')
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\basic_string.h:5174:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\basic_string.h:5174:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   'Tree' is not derived from 'const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>'
+  cout << t;
+          ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+12:31:13 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:125:54: error: no matching function for call to 'Tree::Tree(Add*)'
+  Tree t(new Add(new Constant(1.0), new Constant(4.0)));
+                                                      ^
+..\src\Module8_ExpressionTree.cpp:61:7: note: candidate: Tree::Tree()
+ class Tree : public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:61:7: note:   candidate expects 0 arguments, 1 provided
+..\src\Module8_ExpressionTree.cpp:61:7: note: candidate: Tree::Tree(const Tree&)
+..\src\Module8_ExpressionTree.cpp:61:7: note:   no known conversion for argument 1 from 'Add*' to 'const Tree&'
+..\src\Module8_ExpressionTree.cpp:125:7: error: cannot declare variable 't' to be of abstract type 'Tree'
+  Tree t(new Add(new Constant(1.0), new Constant(4.0)));
+       ^
+..\src\Module8_ExpressionTree.cpp:61:7: note:   because the following virtual functions are pure within 'Tree':
+ class Tree : public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:17:17: note: 	virtual double Node::evaluate()
+  virtual double evaluate() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:127:7: error: no match for 'operator<<' (operand types are 'std::ostream {aka std::basic_ostream<char>}' and 'Tree')
+  cout << t;
+       ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:108:7: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:117:7: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:127:7: note:   no known conversion for argument 1 from 'Tree' to 'std::ios_base& (*)(std::ios_base&)'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:166:7: note:   no known conversion for argument 1 from 'Tree' to 'long int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:170:7: note:   no known conversion for argument 1 from 'Tree' to 'long unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:174:7: note:   no known conversion for argument 1 from 'Tree' to 'bool'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:91:5: note:   no known conversion for argument 1 from 'Tree' to 'short int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:181:7: note:   no known conversion for argument 1 from 'Tree' to 'short unsigned int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:105:5: note:   no known conversion for argument 1 from 'Tree' to 'int'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:192:7: note:   no known conversion for argument 1 from 'Tree' to 'unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:201:7: note:   no known conversion for argument 1 from 'Tree' to 'long long int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:205:7: note:   no known conversion for argument 1 from 'Tree' to 'long long unsigned int'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:220:7: note:   no known conversion for argument 1 from 'Tree' to 'double'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:224:7: note:   no known conversion for argument 1 from 'Tree' to 'float'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:232:7: note:   no known conversion for argument 1 from 'Tree' to 'long double'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:245:7: note:   no known conversion for argument 1 from 'Tree' to 'const void*'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:119:5: note:   no known conversion for argument 1 from 'Tree' to 'std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
+..\src\Module8_ExpressionTree.cpp:100:10: note: candidate: std::ostream& operator<<(std::ostream&, const Add&)
+ ostream& operator<<(ostream& os, const Add& add) {
+          ^
+..\src\Module8_ExpressionTree.cpp:100:10: note:   no known conversion for argument 2 from 'Tree' to 'const Add&'
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:574:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const unsigned char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:569:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const signed char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:556:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:638:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'const char*'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:539:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   mismatched types 'const _CharT*' and 'Tree'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:519:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'unsigned char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:514:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'signed char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:508:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:502:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   cannot convert 't' (type 'Tree') to type 'char'
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39:0,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:497:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   deduced conflicting types for parameter '_CharT' ('char' and 'Tree')
+  cout << t;
+          ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\string:52:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:39,
+                 from ..\src\Module8_ExpressionTree.cpp:9:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\basic_string.h:5174:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\basic_string.h:5174:5: note:   template argument deduction/substitution failed:
+..\src\Module8_ExpressionTree.cpp:127:10: note:   'Tree' is not derived from 'const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>'
+  cout << t;
+          ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+12:47:28 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+07:13:39 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+15:45:55 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+15:47:48 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:26:25 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:29:53 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:224:32: error: no matching function for call to 'Mul::Mul(Variable*, Sub&)'
+  Mul b(Mul(new Variable("Y"), a));
+                                ^
+..\src\Module8_ExpressionTree.cpp:145:2: note: candidate: Mul::Mul(Node*, Node*)
+  Mul(Node *leftNode, Node *rightNode) {
+  ^
+..\src\Module8_ExpressionTree.cpp:145:2: note:   no known conversion for argument 2 from 'Sub' to 'Node*'
+..\src\Module8_ExpressionTree.cpp:141:7: note: candidate: Mul::Mul(const Mul&)
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:141:7: note:   candidate expects 1 argument, 2 provided
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:31:00 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:33:18 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:37:58 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In member function 'virtual double Add::evaluate()':
+..\src\Module8_ExpressionTree.cpp:84:35: error: invalid operands of types 'double' and 'const char [4]' to binary 'operator+'
+   string symbol = leftNodeValue + " + " + rightNodeValue;
+                                   ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:39:31 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In member function 'virtual double Add::evaluate()':
+..\src\Module8_ExpressionTree.cpp:84:35: error: invalid operands of types 'double' and 'const char [4]' to binary 'operator+'
+   string symbol = leftNodeValue + " + " + rightNodeValue;
+                                   ^
+..\src\Module8_ExpressionTree.cpp: In member function 'std::__cxx11::string Add::getExpression() const':
+..\src\Module8_ExpressionTree.cpp:103:53: error: passing 'const std::map<std::__cxx11::basic_string<char>, double>' as 'this' argument discards qualifiers [-fpermissive]
+   symbolTable["(" + leftStr + " + " + rightStr + ")"] = this -> evaluate();
+                                                     ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\map:61:0,
+                 from ..\src\Module8_ExpressionTree.cpp:11:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_map.h:474:7: note:   in call to 'std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = double; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, double> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = double; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]'
+       operator[](const key_type& __k)
+       ^
+..\src\Module8_ExpressionTree.cpp:103:74: error: passing 'const Add' as 'this' argument discards qualifiers [-fpermissive]
+   symbolTable["(" + leftStr + " + " + rightStr + ")"] = this -> evaluate();
+                                                                          ^
+..\src\Module8_ExpressionTree.cpp:80:9: note:   in call to 'virtual double Add::evaluate()'
+  double evaluate() {
+         ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:39:43 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In member function 'virtual double Add::evaluate()':
+..\src\Module8_ExpressionTree.cpp:84:35: error: invalid operands of types 'double' and 'const char [4]' to binary 'operator+'
+   string symbol = leftNodeValue + " + " + rightNodeValue;
+                                   ^
+..\src\Module8_ExpressionTree.cpp: In member function 'std::__cxx11::string Add::getExpression() const':
+..\src\Module8_ExpressionTree.cpp:103:53: error: passing 'const std::map<std::__cxx11::basic_string<char>, double>' as 'this' argument discards qualifiers [-fpermissive]
+   symbolTable["(" + leftStr + " + " + rightStr + ")"] = evaluate();
+                                                     ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\map:61:0,
+                 from ..\src\Module8_ExpressionTree.cpp:11:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_map.h:474:7: note:   in call to 'std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = double; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, double> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = double; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]'
+       operator[](const key_type& __k)
+       ^
+..\src\Module8_ExpressionTree.cpp:103:66: error: passing 'const Add' as 'this' argument discards qualifiers [-fpermissive]
+   symbolTable["(" + leftStr + " + " + rightStr + ")"] = evaluate();
+                                                                  ^
+..\src\Module8_ExpressionTree.cpp:80:9: note:   in call to 'virtual double Add::evaluate()'
+  double evaluate() {
+         ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+17:41:24 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+23:26:04 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:26:54 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:27:41 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:28:08 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:291:42: error: expected primary-expression before '<<' token
+  cout << "Add value = " << a.evaluate(); << endl;
+                                          ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:28:23 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:29:15 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:30:41 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:31:22 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:34:40 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:310:119: error: no matching function for call to 'Mul::Mul(Constant*, Sub)'
+  Add f(Add(Mul(new Constant(2.3), new Constant(2.9)), Mul(new Constant(3.0), Sub(new Constant(5.0), new Constant(2.0)))));
+                                                                                                                       ^
+..\src\Module8_ExpressionTree.cpp:194:2: note: candidate: Mul::Mul(Node*, Node*)
+  Mul(Node *leftNode, Node *rightNode) {
+  ^
+..\src\Module8_ExpressionTree.cpp:194:2: note:   no known conversion for argument 2 from 'Sub' to 'Node*'
+..\src\Module8_ExpressionTree.cpp:189:7: note: candidate: Mul::Mul(const Mul&)
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:189:7: note:   candidate expects 1 argument, 2 provided
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:34:50 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:310:116: error: no matching function for call to 'Mul::Mul(Constant*, Sub)'
+  Add f((Mul(new Constant(2.3), new Constant(2.9)), Mul(new Constant(3.0), Sub(new Constant(5.0), new Constant(2.0)))));
+                                                                                                                    ^
+..\src\Module8_ExpressionTree.cpp:194:2: note: candidate: Mul::Mul(Node*, Node*)
+  Mul(Node *leftNode, Node *rightNode) {
+  ^
+..\src\Module8_ExpressionTree.cpp:194:2: note:   no known conversion for argument 2 from 'Sub' to 'Node*'
+..\src\Module8_ExpressionTree.cpp:189:7: note: candidate: Mul::Mul(const Mul&)
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:189:7: note:   candidate expects 1 argument, 2 provided
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:35:10 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:310:13: error: expected primary-expression before 'g'
+  Add f((Mul g(new Constant(2.3), new Constant(2.9)), Mul h(new Constant(3.0), Sub s(new Constant(5.0), new Constant(2.0)))));
+             ^
+..\src\Module8_ExpressionTree.cpp:310:13: error: expected ')' before 'g'
+23:35:20 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Module8_ExpressionTree
