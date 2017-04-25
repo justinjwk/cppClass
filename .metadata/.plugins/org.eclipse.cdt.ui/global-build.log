@@ -10584,3 +10584,1448 @@ Info: Nothing to build for Examples
 Info: Nothing to build for Module6_Probability
 Info: Nothing to build for Module8_ExpressionTree
 Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+21:21:49 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In member function 'std::__cxx11::string Constant::etExpression() const':
+..\src\Module8_ExpressionTree.cpp:56:26: error: 'to_string' was not declared in this scope
+   return to_string(number);
+                          ^
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:297:28: error: invalid new-expression of abstract class type 'Constant'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:35:7: note:   because the following virtual functions are pure within 'Constant':
+ class Constant: public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:27:17: note: 	virtual std::__cxx11::string Node::getExpression() const
+  virtual string getExpression() const = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:297:47: error: invalid new-expression of abstract class type 'Constant'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:297:48: error: invalid cast to abstract class type 'Add'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:112:7: note:   because the following virtual functions are pure within 'Add':
+ class Add : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:297:6: error: cannot declare variable 'a' to be of abstract type 'Add'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:302:28: error: invalid new-expression of abstract class type 'Constant'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:302:47: error: invalid new-expression of abstract class type 'Constant'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:302:48: error: invalid cast to abstract class type 'Sub'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:157:7: note:   because the following virtual functions are pure within 'Sub':
+ class Sub : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:302:6: error: cannot declare variable 'b' to be of abstract type 'Sub'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:307:28: error: invalid new-expression of abstract class type 'Constant'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:307:47: error: invalid new-expression of abstract class type 'Constant'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:307:48: error: invalid cast to abstract class type 'Mul'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:201:7: note:   because the following virtual functions are pure within 'Mul':
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:307:6: error: cannot declare variable 'c' to be of abstract type 'Mul'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:312:29: error: invalid new-expression of abstract class type 'Constant'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                             ^
+..\src\Module8_ExpressionTree.cpp:312:48: error: invalid new-expression of abstract class type 'Constant'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:312:49: error: invalid cast to abstract class type 'Div'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                                                 ^
+..\src\Module8_ExpressionTree.cpp:245:7: note:   because the following virtual functions are pure within 'Div':
+ class Div : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:312:6: error: cannot declare variable 'd' to be of abstract type 'Div'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:317:29: error: invalid new-expression of abstract class type 'Constant'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                             ^
+..\src\Module8_ExpressionTree.cpp:317:48: error: invalid new-expression of abstract class type 'Constant'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:317:49: error: invalid cast to abstract class type 'Div'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                                                 ^
+..\src\Module8_ExpressionTree.cpp:317:6: error: cannot declare variable 'e' to be of abstract type 'Div'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+      ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+21:22:01 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:296:28: error: invalid new-expression of abstract class type 'Constant'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:35:7: note:   because the following virtual functions are pure within 'Constant':
+ class Constant: public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:27:17: note: 	virtual std::__cxx11::string Node::getExpression() const
+  virtual string getExpression() const = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:296:47: error: invalid new-expression of abstract class type 'Constant'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:296:48: error: invalid cast to abstract class type 'Add'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:111:7: note:   because the following virtual functions are pure within 'Add':
+ class Add : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:296:6: error: cannot declare variable 'a' to be of abstract type 'Add'
+  Add a(Add(new Constant(1.0), new Constant(4.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:301:28: error: invalid new-expression of abstract class type 'Constant'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:301:47: error: invalid new-expression of abstract class type 'Constant'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:301:48: error: invalid cast to abstract class type 'Sub'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:156:7: note:   because the following virtual functions are pure within 'Sub':
+ class Sub : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:301:6: error: cannot declare variable 'b' to be of abstract type 'Sub'
+  Sub b(Sub(new Constant(5.0), new Constant(3.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:306:28: error: invalid new-expression of abstract class type 'Constant'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                            ^
+..\src\Module8_ExpressionTree.cpp:306:47: error: invalid new-expression of abstract class type 'Constant'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:306:48: error: invalid cast to abstract class type 'Mul'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:200:7: note:   because the following virtual functions are pure within 'Mul':
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:306:6: error: cannot declare variable 'c' to be of abstract type 'Mul'
+  Mul c(Mul(new Constant(2.0), new Constant(8.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:311:29: error: invalid new-expression of abstract class type 'Constant'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                             ^
+..\src\Module8_ExpressionTree.cpp:311:48: error: invalid new-expression of abstract class type 'Constant'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:311:49: error: invalid cast to abstract class type 'Div'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+                                                 ^
+..\src\Module8_ExpressionTree.cpp:244:7: note:   because the following virtual functions are pure within 'Div':
+ class Div : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:311:6: error: cannot declare variable 'd' to be of abstract type 'Div'
+  Div d(Div(new Constant(10.0), new Constant(2.0)));
+      ^
+..\src\Module8_ExpressionTree.cpp:316:29: error: invalid new-expression of abstract class type 'Constant'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                             ^
+..\src\Module8_ExpressionTree.cpp:316:48: error: invalid new-expression of abstract class type 'Constant'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:316:49: error: invalid cast to abstract class type 'Div'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+                                                 ^
+..\src\Module8_ExpressionTree.cpp:316:6: error: cannot declare variable 'e' to be of abstract type 'Div'
+  Div e(Div(new Constant(10.0), new Constant(0.0)));
+      ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+21:22:38 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:28:09 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:270:28: error: invalid new-expression of abstract class type 'Constant'
+  Mul m(Mul(new Constant(2.3), new Variable("X")));
+                            ^
+..\src\Module8_ExpressionTree.cpp:35:7: note:   because the following virtual functions are pure within 'Constant':
+ class Constant: public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:270:47: error: invalid new-expression of abstract class type 'Variable'
+  Mul m(Mul(new Constant(2.3), new Variable("X")));
+                                               ^
+..\src\Module8_ExpressionTree.cpp:63:7: note:   because the following virtual functions are pure within 'Variable':
+ class Variable: public Node {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:270:48: error: invalid cast to abstract class type 'Mul'
+  Mul m(Mul(new Constant(2.3), new Variable("X")));
+                                                ^
+..\src\Module8_ExpressionTree.cpp:185:7: note:   because the following virtual functions are pure within 'Mul':
+ class Mul : public Tree {
+       ^
+..\src\Module8_ExpressionTree.cpp:28:17: note: 	virtual double Node::derivative()
+  virtual double derivative() = 0;
+                 ^
+..\src\Module8_ExpressionTree.cpp:270:6: error: cannot declare variable 'm' to be of abstract type 'Mul'
+  Mul m(Mul(new Constant(2.3), new Variable("X")));
+      ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:30:07 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:30:13 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:32:36 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:34:03 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:36:11 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:39:21 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:39:42 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:40:12 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+22:56:47 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:02:06 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:02:47 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:386:40: error: expression cannot be used as a function
+  cout << "Value: " << d_a.derivative()() << endl;
+                                        ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:02:59 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:03:51 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:06:24 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:07:16 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:07:46 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:13:39 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:18:14 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:19:30 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:322:42: error: no match for 'operator*' (operand type is 'std::ostream {aka std::basic_ostream<char>}')
+  *****************************************
+                                          ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:19:41 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:26:13 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:27:50 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:29:18 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:40:47 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:404:24: error: 'd_a' was not declared in this scope
+  cout << "Output: " << d_a << endl;
+                        ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:40:58 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:41:33 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:41:51 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:43:16 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:43:55 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:44:19 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:46:18 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:46:40 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:47:27 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:56:42 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:355:2: error: expected ';' before 'cout'
+  cout << "Output: " << d << endl;
+  ^
+23:56:44 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+..\src\Module8_ExpressionTree.cpp: In function 'int main()':
+..\src\Module8_ExpressionTree.cpp:355:2: error: expected ';' before 'cout'
+  cout << "Output: " << d << endl;
+  ^
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:56:48 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+Info: Nothing to build for Module6_Probability
+23:56:59 **** Incremental Build of configuration Debug for project Module8_ExpressionTree ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module8_ExpressionTree.o" "..\\src\\Module8_ExpressionTree.cpp" 
+g++ -o Module8_ExpressionTree.exe "src\\Module8_ExpressionTree.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+22:21:59 **** Rebuild of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+g++ -o Module12_PorkerGame.exe "src\\Module12_PorkerGame.o" 
+22:22:00 **** Rebuild of configuration Debug for project Module4_Poker ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Poker.o" "..\\src\\Poker.cpp" 
+In file included from ..\src\Poker.cpp:18:0:
+..\src\Poker.h:33:102: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  std::string rank[NUMBER_OF_RANK] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+                                                                                                      ^
+..\src\Poker.h:34:56: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  std::string suit[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                        ^
+..\src\Poker.h:33:102: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::string rank[NUMBER_OF_RANK] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+                                                                                                      ^
+..\src\Poker.h:34:56: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::string suit[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                        ^
+g++ -o Module4_Poker.exe "src\\Poker.o" 
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Examples
+00:08:16 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:106: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:106: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:18:106: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp:55:30: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp:57:12: error: invalid use of non-static data member 'Deck::NUMBER_OF_CARDS'
+  Card deck[NUMBER_OF_CARDS];
+            ^
+..\src\Module12_PorkerGame.cpp:55:30: note: declared here
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:62:4: error: 'deck' was not declared in this scope
+    deck[i] = new Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp:26:2: error: 'Card::Card(int, int)' is private
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:62:37: error: within this context
+    deck[i] = new Card(i % 13, i / 13);
+                                     ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:68:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:08:54 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:106: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:106: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:18:106: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp:55:30: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp:57:12: error: invalid use of non-static data member 'Deck::NUMBER_OF_CARDS'
+  Card deck[NUMBER_OF_CARDS];
+            ^
+..\src\Module12_PorkerGame.cpp:55:30: note: declared here
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:62:4: error: 'deck' was not declared in this scope
+    deck[i] = new Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp:26:2: error: 'Card::Card(int, int)' is private
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:62:37: error: within this context
+    deck[i] = new Card(i % 13, i / 13);
+                                     ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:68:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:09:05 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:106: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:106: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:18:106: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp:55:30: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp:57:12: error: invalid use of non-static data member 'Deck::NUMBER_OF_CARDS'
+  Card deck[NUMBER_OF_CARDS];
+            ^
+..\src\Module12_PorkerGame.cpp:55:30: note: declared here
+  const int NUMBER_OF_CARDS = 52;
+                              ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:62:4: error: 'deck' was not declared in this scope
+    deck[i] = new Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp:26:2: error: 'Card::Card(int, int)' is private
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:62:37: error: within this context
+    deck[i] = new Card(i % 13, i / 13);
+                                     ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:68:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:09:16 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:106: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:106: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:18:106: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:26:2: error: 'Card::Card(int, int)' is private
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:62:37: error: within this context
+    deck[i] = new Card(i % 13, i / 13);
+                                     ^
+..\src\Module12_PorkerGame.cpp:62:12: error: no match for 'operator=' (operand types are 'Card' and 'Card*')
+    deck[i] = new Card(i % 13, i / 13);
+            ^
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card& Card::operator=(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   no known conversion for argument 1 from 'Card*' to 'const Card&'
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:47:9: error: 'std::__cxx11::string Card::getCardValue()' is private
+  string getCardValue() {
+         ^
+..\src\Module12_PorkerGame.cpp:68:33: error: within this context
+    cout << deck[i].getCardValue() << " " << endl;
+                                 ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:09:37 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:111: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  std::string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                               ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:111: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                               ^
+..\src\Module12_PorkerGame.cpp:18:111: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:26:2: error: 'Card::Card(int, int)' is private
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:62:37: error: within this context
+    deck[i] = new Card(i % 13, i / 13);
+                                     ^
+..\src\Module12_PorkerGame.cpp:62:12: error: no match for 'operator=' (operand types are 'Card' and 'Card*')
+    deck[i] = new Card(i % 13, i / 13);
+            ^
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card& Card::operator=(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   no known conversion for argument 1 from 'Card*' to 'const Card&'
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:47:9: error: 'std::__cxx11::string Card::getCardValue()' is private
+  string getCardValue() {
+         ^
+..\src\Module12_PorkerGame.cpp:68:33: error: within this context
+    cout << deck[i].getCardValue() << " " << endl;
+                                 ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:10:44 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:106: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:19:60: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:18:106: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                          ^
+..\src\Module12_PorkerGame.cpp:18:106: error: too many initializers for 'std::__cxx11::string [13] {aka std::__cxx11::basic_string<char> [13]}'
+..\src\Module12_PorkerGame.cpp:19:60: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {" ", "S", "H", "D", "C"};
+                                                            ^
+..\src\Module12_PorkerGame.cpp:19:60: error: too many initializers for 'std::__cxx11::string [4] {aka std::__cxx11::basic_string<char> [4]}'
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:64:12: error: no match for 'operator=' (operand types are 'Card' and 'Card*')
+    deck[i] = new Card(i % 13, i / 13);
+            ^
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card& Card::operator=(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   no known conversion for argument 1 from 'Card*' to 'const Card&'
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:11:15 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:64:12: error: no match for 'operator=' (operand types are 'Card' and 'Card*')
+    deck[i] = new Card(i % 13, i / 13);
+            ^
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card& Card::operator=(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   no known conversion for argument 1 from 'Card*' to 'const Card&'
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:11:37 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+g++ -o Module12_PorkerGame.exe "src\\Module12_PorkerGame.o" 
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:12:09 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:93:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp:68:7: error: 'void Deck::displayDeck()' is private
+  void displayDeck() {
+       ^
+..\src\Module12_PorkerGame.cpp:94:16: error: within this context
+  d.displayDeck();
+                ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:12:22 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:95:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:13:38 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck : public Card {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck : public Card {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:95:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck : public Card {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:13:56 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:95:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:14:05 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:66:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:72:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:14:25 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:97:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:15:00 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:38: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  Card deck = new Card[NUMBER_OF_CARDS];
+                                      ^
+..\src\Module12_PorkerGame.cpp:63:38: error: no matching function for call to 'Card::Card()'
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp:63:38: error: could not convert '(operator new [](24132u), (((*(sizetype*)<anonymous>) = 52u), (<statement>, (((Card*)<anonymous>) + 4u))))' from 'Card*' to 'Card'
+  Card deck = new Card[NUMBER_OF_CARDS];
+                                      ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:8: error: no match for 'operator[]' (operand types are 'Card' and 'int')
+    deck[i] = Card(i % 13, i / 13);
+        ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:16: error: no match for 'operator[]' (operand types are 'Card' and 'int')
+    cout << deck[i].getCardValue() << " " << endl;
+                ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:15:09 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:39: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  Card *deck = new Card[NUMBER_OF_CARDS];
+                                       ^
+..\src\Module12_PorkerGame.cpp:63:39: error: no matching function for call to 'Card::Card()'
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:15:33 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:12: error: expected primary-expression before '*' token
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+            ^
+..\src\Module12_PorkerGame.cpp:63:13: error: 'deck' was not declared in this scope
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+             ^
+..\src\Module12_PorkerGame.cpp:63:44: error: no matching function for call to 'Card::Card()'
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+                                            ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp:63:44: error: an assignment cannot appear in a constant-expression
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+                                            ^
+..\src\Module12_PorkerGame.cpp:63:44: error: bit-field '<anonymous>' with non-integral type
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:15:35 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:12: error: expected primary-expression before '*' token
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+            ^
+..\src\Module12_PorkerGame.cpp:63:13: error: 'deck' was not declared in this scope
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+             ^
+..\src\Module12_PorkerGame.cpp:63:44: error: no matching function for call to 'Card::Card()'
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+                                            ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp:63:44: error: an assignment cannot appear in a constant-expression
+  Card:Card *deck = new Card[NUMBER_OF_CARDS];
+                                            ^
+..\src\Module12_PorkerGame.cpp:63:44: error: bit-field '<anonymous>' with non-integral type
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:15:57 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:2: error: 'Card::Card' names the constructor, not the type
+  Card::Card deck[NUMBER_OF_CARDS];
+  ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:39:40 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:2: error: 'Card::Card' names the constructor, not the type
+  Card::Card[NUMBER_OF_CARDS] deck;
+  ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:40:38 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+..\src\Module12_PorkerGame.cpp: In function 'int main()':
+..\src\Module12_PorkerGame.cpp:97:7: note: synthesized method 'Deck::Deck()' first required here 
+  Deck d;
+       ^
+..\src\Module12_PorkerGame.cpp: In constructor 'Deck::Deck()':
+..\src\Module12_PorkerGame.cpp:55:7: error: no matching function for call to 'Card::Card()'
+ class Deck {
+       ^
+..\src\Module12_PorkerGame.cpp:28:2: note: candidate: Card::Card(int, int)
+  Card (int r, int s) {
+  ^
+..\src\Module12_PorkerGame.cpp:28:2: note:   candidate expects 2 arguments, 0 provided
+..\src\Module12_PorkerGame.cpp:13:7: note: candidate: Card::Card(const Card&)
+ class Card {
+       ^
+..\src\Module12_PorkerGame.cpp:13:7: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:40:46 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:63:2: error: 'Card::Card' names the constructor, not the type
+  Card::Card deck[NUMBER_OF_CARDS];
+  ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:68:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:74:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:41:03 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:67:2: error: 'Card::Card' names the constructor, not the type
+  Card::Card deck[NUMBER_OF_CARDS];
+  ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::initialDeck()':
+..\src\Module12_PorkerGame.cpp:72:4: error: 'deck' was not declared in this scope
+    deck[i] = Card(i % 13, i / 13);
+    ^
+..\src\Module12_PorkerGame.cpp: In member function 'void Deck::displayDeck()':
+..\src\Module12_PorkerGame.cpp:78:12: error: 'deck' was not declared in this scope
+    cout << deck[i].getCardValue() << " " << endl;
+            ^
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree
+Info: Nothing to build for Examples
+00:54:54 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Poker.o" "..\\src\\Poker.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+                                                                                                     ^
+..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+                                                       ^
+g++ -o Module12_PorkerGame.exe "src\\Poker.o" "src\\Module12_PorkerGame.o" 
+c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Module8_ExpressionTree

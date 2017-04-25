@@ -2,15 +2,18 @@
 // Name        : Module8_ExpressionTree.cpp
 // Author      : Justin Kim
 // Description : This file is a set of classes that can represent
-//				 arithmetic expressions. That is, tree where the intereior nodes
+//				 arithmetic expressions. That is, tree where the interior nodes
 //			     are arithmetic operations and the leaves are either variables or
 //      		 constants.
 //============================================================================
 
 #include <iostream>
 #include <sstream>
+#include <string>
 #include <map>
 using namespace std;
+
+map<string, double> symbolTable;
 
 /**
  * This Node class is a parent class of tree,
@@ -21,6 +24,8 @@ class Node {
 public:
 
 	virtual double evaluate() = 0;
+	virtual string getExpression() const = 0;
+	virtual double derivative() = 0;
 };
 
 /**
@@ -44,6 +49,17 @@ public:
 		return number;
 	}
 
+	// getExpression() returns a string of number
+	string getExpression() const {
+		ostringstream numString;
+		numString << number;
+		return numString.str();
+	}
+
+	// derivative() returns 0
+	double derivative() {
+		return 0.0;
+	}
 };
 
 /**
@@ -69,12 +85,17 @@ public:
 
 	// evaluate() returns a number of the variable
 	double evaluate() {
-		return number;
+		return symbolTable[variable];
 	}
 
-	// getVariable() returns its string value
-	string getVariable() {
+	// getExpression() returns a string of the variable
+	string getExpression() const {
 		return variable;
+	}
+
+	// derivative() returns a number of variable
+	double derivative() {
+		return symbolTable[variable];
 	}
 };
 
@@ -90,7 +111,7 @@ protected:
 
 	Node *leftNode;
 	Node *rightNode;
-	map<string, double> symbolTable;
+
 };
 
 /**
@@ -115,20 +136,23 @@ public:
 		return leftNodeValue + rightNodeValue;
 	}
 
+	// derivative() adds value of left node derivative value
+	// and right node of derivative value
+	// u + v = du + dv
+	double derivative() {
+		double leftNodeDerivativeValue = leftNode -> derivative();
+		double rightNodeDerivativeValue = rightNode -> derivative();
+
+		return leftNodeDerivativeValue + rightNodeDerivativeValue;
+	}
+
 	friend ostream& operator<<(ostream& os, const Add& add);
 
 	// return output an expression tree of add
 	string getExpression() const {
 
-		ostringstream lstrs;
-		lstrs << leftNode -> evaluate();
-		string leftStr = lstrs.str();
-
-		ostringstream rstrs;
-		rstrs << rightNode -> evaluate();
-		string rightStr = rstrs.str();
-
-		return "(" + leftStr + " + " + rightStr + ")";
+		return "(" + leftNode -> getExpression() + " + " +
+					 rightNode -> getExpression() + ")";
 	}
 };
 
@@ -160,19 +184,24 @@ public:
 		return leftNodeValue - rightNodeValue;
 	}
 
+	// derivative() subtracts value of left node derivative value
+	// and right node of derivative value
+	// u - v = ud - dv
+	double derivative() {
+		double leftNodeDerivativeValue = leftNode -> derivative();
+		double rightNodeDerivativeValue = rightNode -> derivative();
+
+		return leftNodeDerivativeValue - rightNodeDerivativeValue;
+	}
+
+
 	friend ostream& operator<<(ostream& os, const Sub& sub);
 
 	// return output an expression tree of subtraction
 	string getExpression() const {
-		ostringstream lstrs;
-		lstrs << leftNode -> evaluate();
-		string leftStr = lstrs.str();
 
-		ostringstream rstrs;
-		rstrs << rightNode -> evaluate();
-		string rightStr = rstrs.str();
-
-		return "(" + leftStr + " - " + rightStr + ")";
+		return "(" + leftNode -> getExpression() + " - " +
+					 rightNode -> getExpression() + ")";
 	}
 };
 
@@ -204,19 +233,22 @@ public:
 		return leftNodeValue * rightNodeValue;
 	}
 
+	// derivative() multiplies value of left node derivative value
+	// and right node of derivative based on the formula
+	// u * v = u*dv + v*du
+	double derivative() {
+		double value = leftNode -> evaluate() * rightNode -> derivative() +
+				rightNode -> evaluate() * leftNode -> derivative();
+
+		return value;
+	}
+
 	friend ostream& operator<<(ostream& os, const Mul& mul);
 
 	// return output an expression tree of multiple
 	string getExpression() const {
-		ostringstream lstrs;
-		lstrs << leftNode -> evaluate();
-		string leftStr = lstrs.str();
-
-		ostringstream rstrs;
-		rstrs << rightNode -> evaluate();
-		string rightStr = rstrs.str();
-
-		return "(" + leftStr + " * " + rightStr + ")";
+		return "(" + leftNode -> getExpression() + " * " +
+					 rightNode -> getExpression() + ")";
 	}
 };
 
@@ -257,19 +289,23 @@ public:
 		}
 	}
 
+	// derivative() divides value of left node derivative value
+	// and right node of derivative based on the formula
+	// u / v = (v*du - u*dv) / v*v
+	double derivative() {
+		double value = (rightNode -> evaluate() * leftNode -> derivative() -
+						leftNode -> evaluate() * rightNode -> derivative()) /
+						(rightNode -> evaluate() * rightNode -> evaluate());
+
+		return value;
+	}
+
 	friend ostream& operator<<(ostream& os, const Div& div);
 
 	// return output an expression tree of divide
 	string getExpression() const {
-		ostringstream lstrs;
-		lstrs << leftNode -> evaluate();
-		string leftStr = lstrs.str();
-
-		ostringstream rstrs;
-		rstrs << rightNode -> evaluate();
-		string rightStr = rstrs.str();
-
-		return "(" + leftStr + " / " + rightStr + ")";
+		return "(" + leftNode -> getExpression() + " / " +
+					 rightNode -> getExpression() + ")";
 	}
 };
 
@@ -281,30 +317,97 @@ ostream& operator<<(ostream& os, const Div& div) {
 
 int main() {
 
-	// test Add
-	Add a(Add(new Constant(1.0), new Constant(4.0)));
-	cout << "Add = " << a << endl;
-	cout << "Add value = " << a.evaluate() << endl;
+	/****************************************
+	//test regular expression tree
+	*****************************************/
 
-	// test Sub
-	Sub b(Sub(new Constant(5.0), new Constant(3.0)));
-	cout << "Sub = " << b << endl;
-	cout << "Sub value = " << b.evaluate() << endl;
+	cout << "******** Test regular expression tree ********" << endl;
 
-	// test Mul
-	Mul c(Mul(new Constant(2.0), new Constant(8.0)));
-	cout << "Mul = " << c << endl;
-	cout << "Mul value = " << c.evaluate() << endl;
+	// let X = 2.0, Y = 3.0, Z = 5.0
+	symbolTable["X"] = 2.0;
+	symbolTable["Y"] = 3.0;
+	symbolTable["Z"] = 5.0;
 
-	// test Div
-	Div d(Div(new Constant(10.0), new Constant(2.0)));
-	cout << "Div = " << d << endl;
-	cout << "Div value = " << d.evaluate() << endl;
+	cout << "X = " << symbolTable["X"] << ", Y = " << symbolTable["Y"] << ", Z = " << symbolTable["Z"] << endl;
 
-	// test Div divided by 0
-	Div e(Div(new Constant(10.0), new Constant(0.0)));
-	cout << "Div = " << e << endl;
-	cout << "Div value = " << e.evaluate() << endl;
+	// 2.3 * X
+	Mul m1(Mul(new Constant(2.3), new Variable("X")));
+
+	// Z - X
+	Sub s(Sub(new Variable("Z"), new Variable("X")));
+
+	// Y * (Z - X)
+	Mul m2(Mul(new Variable("Y"), &s));
+
+	// (2.3 * X) + (Y * (Z - X)
+	Add a(Add(&m1, &m2));
+
+	// Output an expression tree
+	cout << "Output: " << a << endl;
+
+	// Evaluate an expression tree
+	cout << "Value: " << a.evaluate() << endl;
+
+
+	//Error check, when divided by 0 --> output is always 0
+	Div d(Div(new Constant(2.3), new Constant(0)));
+	cout << "**** Error Check : Divided by 0 -> output = 0 ***" << endl;
+	cout << "Output: " << d << endl;
+	cout << "Value: " << d.evaluate() << endl;
+
+
+
+
+	/****************************************
+	//test derivative expression tree
+	*****************************************/
+
+	cout << "******** Test derivative expression tree ********" << endl;
+
+	// let X = 1.0, Y = 0.0, Z = 0.0
+	symbolTable["X"] = 1.0;
+	symbolTable["Y"] = 0.0;
+	symbolTable["Z"] = 0.0;
+
+	cout << "X = " << symbolTable["X"] << ", Y = " << symbolTable["Y"] << ", Z = " << symbolTable["Z"] << endl;
+
+	// for output
+	Mul dm1(Mul(new Constant(2.3), new Constant(1.0)));
+	Mul dm2(Mul(new Variable("X"), new Constant(0.0)));
+
+	Add da1(Add(&dm1, &dm2));
+
+	Sub ds1(Sub(new Constant(0.0), new Constant(1.0)));
+	Mul dm3(Mul(new Variable("Y"), &ds1));
+
+	Sub ds2(Sub(new Variable("Z"), new Variable("X")));
+	Mul dm4(Mul(&ds2, new Constant(0.0)));
+
+	Add da2(Add(&dm3, &dm4));
+
+	Add da3(Add(&da1, &da2));
+
+	// Output an expression tree
+	cout << "Output: " << da3 << endl;
+
+//////////////////////////////////////////////////////////
+
+	// 2.3 * X
+	Mul d_m1(Mul(new Constant(2.3), new Variable("X")));
+
+	// Z - X
+	Sub d_s(Sub(new Variable("Z"), new Variable("X")));
+
+	// Y * (Z - X)
+	Mul d_m2(Mul(new Variable("Y"), &d_s));
+
+	// (2.3 * X) + (Y * (Z - X)
+	Add d_a(Add(&d_m1, &d_m2));
+
+
+	// Derivative value of expression tree
+	cout << "Derivative Value: " << d_a.derivative() << endl;
+
 
 	return 0;
 }

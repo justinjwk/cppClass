@@ -1,0 +1,58 @@
+//============================================================================
+// Name        : Module12_PorkerGame.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+class Card {
+
+private:
+	string rank;
+	string suit;
+
+public:
+
+	Card(string r, string s) {
+		rank = r;
+		suit = s;
+	}
+
+	string getRank() {
+		return rank;
+	}
+
+	string getSuit() {
+		return suit;
+	}
+
+	string displayCard() {
+		return rank + suit;
+	}
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main() {
+
+	Card c1("2","S");
+	cout << c1.displayCard();
+
+
+	return 0;
+}
