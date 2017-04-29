@@ -1,8 +1,29 @@
-20:28:37 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+00:58:53 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
 Info: Internal Builder is used for build
-g++ -o Module12_PorkerGame.exe "src\\Poker.o" "src\\Module12_PorkerGame.o" 
-c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
-collect2.exe: error: ld returned 1 exit status
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:26:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:24:2: error: 'Card' does not name a type
+  Card *deck;
+  ^
+..\src\Deck.cpp:26:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:31:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:31:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:34:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:45:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
 
-20:28:38 Build Finished (took 290ms)
+00:58:53 Build Finished (took 360ms)
 

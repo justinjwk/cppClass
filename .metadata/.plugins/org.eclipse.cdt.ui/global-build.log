@@ -21,3 +21,249 @@ Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module10_Elevator.o" "..\\src\\Module10_Elevator.cpp" 
 g++ -o Module10_Elevator.exe "src\\Passenger.o" "src\\Module10_Elevator.o" "src\\Floor.o" "src\\Elevator.o" 
 Info: Nothing to build for Module10_Elevator
+Info: Nothing to build for Examples
+23:24:16 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Poker.o" "..\\src\\Poker.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp: In member function 'void Card::setRankValue(std::__cxx11::string)':
+..\src\Module12_PorkerGame.cpp:55:22: error: 'atoi' was not declared in this scope
+    rankValue = atoi(r);
+                      ^
+Info: Nothing to build for Examples
+23:24:50 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp: In constructor 'Card::Card(std::__cxx11::string, std::__cxx11::string)':
+..\src\Module12_PorkerGame.cpp:31:17: error: 'setRankValue' was not declared in this scope
+   setRankValue(r);
+                 ^
+Info: Nothing to build for Examples
+23:25:22 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+g++ -o Module12_PorkerGame.exe "src\\Poker.o" "src\\Module12_PorkerGame.o" 
+c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Examples
+23:30:11 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+g++ -o Module12_PorkerGame.exe "src\\Poker.o" "src\\Module12_PorkerGame.o" 
+c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+00:40:30 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:79:7: error: expected constructor, destructor, or type conversion before '(' token
+ srand (time(NULL));
+       ^
+00:40:45 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:88:9: error: 'time' is not a type
+  srand (time(NULL));
+         ^
+In file included from c:\mingw\include\time.h:165:0,
+                 from ..\src\Module12_PorkerGame.cpp:13:
+..\src\Module12_PorkerGame.cpp:88:14: error: expected ')' before '__null'
+  srand (time(NULL));
+              ^
+..\src\Module12_PorkerGame.cpp:88:14: error: expected ')' before '__null'
+..\src\Module12_PorkerGame.cpp:88:13: error: expected ';' at end of member declaration
+  srand (time(NULL));
+             ^
+In file included from c:\mingw\include\time.h:165:0,
+                 from ..\src\Module12_PorkerGame.cpp:13:
+..\src\Module12_PorkerGame.cpp:88:14: error: expected unqualified-id before '__null'
+  srand (time(NULL));
+              ^
+00:41:05 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:86:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Module12_PorkerGame.cpp:86:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+00:41:24 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:88:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Module12_PorkerGame.cpp:88:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+00:43:09 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Card.o" "..\\src\\Card.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:88:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Module12_PorkerGame.cpp:88:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+00:43:40 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+..\src\Module12_PorkerGame.cpp:88:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Module12_PorkerGame.cpp:88:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+00:44:35 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:23:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:13:1: error: 'string' does not name a type
+ string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+ ^
+..\src\Deck.cpp:14:1: error: 'string' does not name a type
+ string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
+ ^
+..\src\Deck.cpp:21:2: error: 'Card' does not name a type
+  Card *deck;
+  ^
+..\src\Deck.cpp:23:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:28:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:28:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:31:19: error: 'rankList' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                   ^
+..\src\Deck.cpp:31:37: error: 'suitList' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                     ^
+..\src\Deck.cpp:31:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:42:4: error: 'cout' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+    ^
+..\src\Deck.cpp:42:4: note: suggested alternative:
+In file included from ..\src\Deck.cpp:4:0:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+..\src\Deck.cpp:42:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
+00:45:02 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Card.o" "..\\src\\Card.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:26:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:24:2: error: 'Card' does not name a type
+  Card *deck;
+  ^
+..\src\Deck.cpp:26:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:31:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:31:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:34:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:45:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
+00:45:16 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:26:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:24:2: error: 'Card' does not name a type
+  Card::Card *deck;
+  ^
+..\src\Deck.cpp:26:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:31:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:31:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:34:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:45:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
+00:45:33 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:26:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:24:2: error: 'Card' does not name a type
+  Card *deck;
+  ^
+..\src\Deck.cpp:26:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:31:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:31:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:34:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:45:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
+00:58:53 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+..\src\Deck.cpp:26:2: warning: identifier 'nullptr' is a keyword in C++11 [-Wc++0x-compat]
+  srand (time(nullptr));
+  ^
+..\src\Deck.cpp:24:2: error: 'Card' does not name a type
+  Card *deck;
+  ^
+..\src\Deck.cpp:26:9: error: 'time' is not a type
+  srand (time(nullptr));
+         ^
+..\src\Deck.cpp: In constructor 'Deck::Deck()':
+..\src\Deck.cpp:31:3: error: 'deck' was not declared in this scope
+   deck = new Card[NUMBER_OF_CARDS];
+   ^
+..\src\Deck.cpp:31:14: error: 'Card' does not name a type
+   deck = new Card[NUMBER_OF_CARDS];
+              ^
+..\src\Deck.cpp:34:53: error: 'Card' was not declared in this scope
+    deck[i] = Card(rankList[i % 13], suitList[i / 13]);
+                                                     ^
+..\src\Deck.cpp: In member function 'void Deck::printDeck()':
+..\src\Deck.cpp:45:12: error: 'deck' was not declared in this scope
+    cout << deck[i].printCard() << " ";
+            ^
