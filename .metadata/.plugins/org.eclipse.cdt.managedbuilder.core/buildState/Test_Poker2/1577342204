@@ -1,0 +1,11 @@
+#
+#Sat Apr 29 14:46:54 EDT 2017
+Debug/Test_Poker2.exe=1
+Debug/src/Hand.o=1
+Debug/src/DeckOfCards.o=1
+Debug/src/Dealer.o=1
+src/Hand.cpp=1
+src/Dealer.cpp=1
+src/DeckOfCards.cpp=1
+src/Card.cpp=1
+Debug/src/Card.o=1

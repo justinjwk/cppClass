@@ -5,6 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include "Card.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ private:
 
 	Card *deck;
 
-	srand (time(nullptr));
+//	srand (time(NULL));
 
 public:
 

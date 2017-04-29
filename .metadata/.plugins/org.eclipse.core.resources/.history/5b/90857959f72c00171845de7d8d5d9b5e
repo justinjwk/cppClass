@@ -1,0 +1,19 @@
+#ifndef DECKOFCARDS_H_
+#define DECKOFCARDS_H_
+
+#include <string>
+#include <vector>
+using namespace std;
+
+class DeckOfCards {
+
+private:
+	vector<Card> deck;
+	int currentCard;
+
+public:
+	DeckOfCards();
+	void Shuffle();
+	Card dealCard();
+	bool moreCards();
+};

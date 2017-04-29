@@ -1,0 +1,24 @@
+14:46:53 **** Incremental Build of configuration Debug for project Test_Poker2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\DeckOfCards.o" "..\\src\\DeckOfCards.cpp" 
+..\src\DeckOfCards.cpp: In constructor 'DeckOfCards::DeckOfCards()':
+..\src\DeckOfCards.cpp:16:27: error: no matching function for call to 'Card::Card(int&, int&)'
+   deck.push_back( Card(k,j) );
+                           ^
+In file included from ..\src\DeckOfCards.h:14:0,
+                 from ..\src\DeckOfCards.cpp:8:
+..\src\Card.h:15:2: note: candidate: Card::Card(const Card&)
+  Card(const Card &Source);
+  ^
+..\src\Card.h:15:2: note:   candidate expects 1 argument, 2 provided
+..\src\Card.h:14:2: note: candidate: Card::Card(std::__cxx11::string, std::__cxx11::string)
+  Card(string r, string s);
+  ^
+..\src\Card.h:14:2: note:   no known conversion for argument 1 from 'int' to 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}'
+..\src\Card.h:13:2: note: candidate: Card::Card()
+  Card();
+  ^
+..\src\Card.h:13:2: note:   candidate expects 0 arguments, 2 provided
+
+14:46:54 Build Finished (took 393ms)
+

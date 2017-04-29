@@ -1,55 +1,51 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <stdio.h>
+#include "Card.h"
 
 using namespace std;
 
-class Card {
 
-private:
-
-	string rank;
-	string suit;
-	int rankValue;
-
-public:
-
-	Card() {
+	Card::Card() {
 
 	}
 
-	Card (string r, string s) {
+	Card::~Card() {
+
+	}
+
+	Card::Card (string r, string s) {
 		rank = r;
 		suit = s;
 		setRankValue(r);
 	}
 
-	string printCard() {
+	string Card::printCard() {
 		return rank + suit;
 	}
 
-	string getRank() {
+	string Card::getRank() {
 		return rank;
 	}
 
-	string getSuit() {
+	string Card::getSuit() {
 		return suit;
 	}
 
-	int getRankValue() {
+	int Card::getRankValue() {
 		return rankValue;
 	}
 
-	void setRankValue(string r) {
-//		if (r.compare("A") == 0) {
-//			rankValue = 1;
-//		}
-//		else {
-//			rankValue = atoi(r);
-//		}
+	void Card::setRankValue(string r) {
+		if (r.compare("A") == 0) {
+			rankValue = 1;
+		}
+		else {
+			stringstream ss(r);
+			ss >> rankValue;
+//			rankValue = atoi(r.c_str());
+		}
 	}
 
-
-
-};
 
