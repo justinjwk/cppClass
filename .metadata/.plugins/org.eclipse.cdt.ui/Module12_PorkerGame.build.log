@@ -1,22 +1,8 @@
-00:54:54 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
+20:28:37 **** Incremental Build of configuration Debug for project Module12_PorkerGame ****
 Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Poker.o" "..\\src\\Poker.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
-..\src\Module12_PorkerGame.cpp:18:101: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
-  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-                                                                                                     ^
-..\src\Module12_PorkerGame.cpp:19:55: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
-  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
-                                                       ^
-..\src\Module12_PorkerGame.cpp:18:101: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
-  string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-                                                                                                     ^
-..\src\Module12_PorkerGame.cpp:19:55: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
-  string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
-                                                       ^
 g++ -o Module12_PorkerGame.exe "src\\Poker.o" "src\\Module12_PorkerGame.o" 
 c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
 collect2.exe: error: ld returned 1 exit status
 
-00:54:55 Build Finished (took 1s.76ms)
+20:28:38 Build Finished (took 290ms)
 
