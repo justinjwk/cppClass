@@ -7,13 +7,13 @@
 using namespace std;
 
 //including BubbleSort from hand.cc
-void BubbleSort( Card h[5] );
+void sortCards( Card h[5] );
 
 //Additional memeber functions of Hand for the purposes of game.cc
 //Additional constructor
-Hand::Hand( OWNER o )
+Hand::Hand( PLAYER_TYPE o )
 {
-	owner = o;
+	playerType = o;
 	hand_value = unchecked;
 	high_pair = 0;
 	low_pair = 0;
@@ -21,7 +21,7 @@ Hand::Hand( OWNER o )
 //Additional setter
 void Hand::setHand( Card arr[5] )
 {
-	BubbleSort( arr );
+	sortCards( arr );
 	for ( int i=0; i<5; i++ )
 		hand.push_back( arr[i] );
 	check_list();

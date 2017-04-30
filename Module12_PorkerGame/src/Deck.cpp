@@ -1,50 +1,59 @@
 /**
  *
  */
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <time.h>
-#include "Card.h"
 
-using namespace std;
+#include "Deck.h"
 
+static const int NUMBER_OF_CARDS = 52;
+static const int NUMBER_OF_RANK = 13;
+static const int NUMBER_OF_SUIT = 4;
 
-const int NUMBER_OF_CARDS = 52;
-const int NUMBER_OF_RANK = 13;
-const int NUMBER_OF_SUIT = 4;
-
-string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
-
-class Deck {
-
-private:
+static const string rankList[NUMBER_OF_RANK] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+static const string suitList[NUMBER_OF_SUIT] = {"S", "H", "D", "C"};
 
 
-	Card *deck;
+Deck::Deck() {
 
-//	srand (time(NULL));
-
-public:
-
-	Deck() {
-		deck = new Card[NUMBER_OF_CARDS];
-
-		for(int i = 0; i < NUMBER_OF_CARDS; i++) {
-			deck[i] = Card(rankList[i % 13], suitList[i / 13]);
-		}
+	for(int i = 0; i < NUMBER_OF_CARDS; i++) {
+		deck.push_back(Card(rankList[i % 13], suitList[i / 13]));
 	}
 
-	void fisherYatesShuffle() {
+	currentCardIndex = 0; 	// current card index
+}
 
+Deck::~Deck() {
+
+}
+
+void Deck::fisherYatesShuffle() {
+
+	int randomNum = 0;
+	int randIndex = 52;
+
+	Card temp;
+
+	for(int i = NUMBER_OF_CARDS-1; i > -1; i--) {
+
+		randomNum = rand() % randIndex--;
+
+		temp = deck[i];
+		deck[i] = deck[randomNum];
+		deck[randomNum] = temp;
 	}
+}
 
-	void printDeck() {
+void Deck::printDeck() {
 
-		for(int i = 0; i < NUMBER_OF_CARDS; i++) {
-			cout << deck[i].printCard() << " ";
-		}
+	for(int i = 0; i < NUMBER_OF_CARDS; i++) {
+		cout << deck[i].printCard() << " ";
 	}
+}
 
-};
+Card Deck::dealCard() {
+	return deck[currentCardIndex++];
+}
+
+bool Deck::moreCard() {
+	return (currentCardIndex < 52) ? true : false;
+}
+

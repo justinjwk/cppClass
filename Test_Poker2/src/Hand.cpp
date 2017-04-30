@@ -8,41 +8,41 @@ using namespace std;
 
 Hand::Hand() {}
 
-void BubbleSort( Card h[5] )
+void sortCards( Card cardHand[5] )
 {
   int i, j;
   for ( i=0; i<4; i++ )
     {
       for ( j=0; j < 4-i; j++ )
   {
-	  if ( h[j].getValue() > h[j+1].getValue() )
+	  if ( cardHand[j].getValue() > cardHand[j+1].getValue() )
 	    {
 	      //swaps values
-	      Card temp = h[j];
-	      h[j] = h[j+1];
-	      h[j+1] = temp;
+	      Card temp = cardHand[j];
+	      cardHand[j] = cardHand[j+1];
+	      cardHand[j+1] = temp;
 	    }
 	}
     }
 }
 
-Hand::Hand( DeckOfCards a, OWNER o )
+Hand::Hand( DeckOfCards d, PLAYER_TYPE p )
 {
   Card temp[5];
 
   for ( int i=0; i<5; i++ )
-    temp[i] = a.dealCard();
-  BubbleSort( temp );
+    temp[i] = d.dealCard();
+  sortCards( temp );
   for ( int i=0; i<5; i++ )
     hand.push_back( temp[i] );
 
   //sets the owner of the hand, either player or computer
-  owner = o;
+  playerType = p;
   hand_value = unchecked;
 }
 
 vector<int> Hand::getHighest()
-{ return high_list; }
+{ return highList; }
 
 int Hand::getHighPair()
 { return high_pair; }
@@ -55,7 +55,7 @@ HAND_VALUE Hand::getHandValue()
 
 void Hand::printHand( string s )
 {
-  if ( owner == player )
+  if ( playerType == player )
     cout << "\nPlayer";
   else
     cout << "\nComputer";
@@ -80,9 +80,9 @@ void Hand::determine_high_card()
     {
       //checks for straight with Ace as low card
       if ( hand_value == 5 && hand[4].getValue() == 14 )
-	high_list.push_back( hand[3].getValue() );
+	highList.push_back( hand[3].getValue() );
       else
-	high_list.push_back( hand[4].getValue() );
+	highList.push_back( hand[4].getValue() );
     }
   //pair, two pair, three of a kind, four of a kind
   else if ( hand_value < 5 || hand_value == 7 )
@@ -91,7 +91,7 @@ void Hand::determine_high_card()
 	{
 	  //pushes non-used card into the vector first
 	  if ( hand[i].getValue() != high_pair && hand[i].getValue() != low_pair )
-	      high_list.push_back( hand[i].getValue() );
+	      highList.push_back( hand[i].getValue() );
 	}
     }
 }

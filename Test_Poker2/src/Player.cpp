@@ -6,7 +6,7 @@
 using namespace std;
 
 //BubbleSort from hand.cc
-void BubbleSort( Card h[5] );
+void sortCards( Card h[5] );
 
 int validateInput( bool zero )
 {
@@ -57,7 +57,7 @@ void Hand::playersTurn( DeckOfCards &the_deck )
 	temp[j] = hand[j];
     }
   hand.clear();
-  BubbleSort( temp );
+  sortCards( temp );
   setHand( temp );
 }
 

@@ -7,7 +7,7 @@
 using namespace std;
 
 //using BubbleSort from hand.cc
-void BubbleSort( Card h[5] );
+void sortCards( Card h[5] );
 
 void Hand::tradeCard( DeckOfCards &the_deck, int n )
 {
@@ -21,7 +21,7 @@ void Hand::tradeCard( DeckOfCards &the_deck, int n )
       else
 	temp[i] = hand[i];
     }
-  BubbleSort( temp );
+  sortCards( temp );
   hand.clear();
   setHand( temp );
 }
