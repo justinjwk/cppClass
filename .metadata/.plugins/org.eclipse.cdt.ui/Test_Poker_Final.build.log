@@ -1,0 +1,15 @@
+12:46:52 **** Incremental Build of configuration Debug for project Test_Poker_Final ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Hand.o" "..\\src\\Hand.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Card.o" "..\\src\\Card.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Module12_PorkerGame.o" "..\\src\\Module12_PorkerGame.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Game.o" "..\\src\\Game.cpp" 
+..\src\Game.cpp: In member function 'void Game::dealerTurn()':
+..\src\Game.cpp:110:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for ( int i=0; i<extra.size(); i++ ) {
+                   ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
+g++ -o Test_Poker_Final.exe "src\\Module12_PorkerGame.o" "src\\Hand.o" "src\\Game.o" "src\\Deck.o" "src\\Card.o" 
+
+12:46:56 Build Finished (took 3s.777ms)
+

@@ -11,14 +11,14 @@
 class Game
 {
 private:
-  DeckOfCards game_deck;
-  Hand players_hand;
-  Hand computers_hand;
+  DeckOfCards deck;
+  Hand playersHand;
+  Hand computersHand;
 public:
   Game();
-  void determine_winner();
-  void simulateTurn(); //in dealer.cc
-  void performTurn(); //in player.cc
+  void whoIsWinner();
+  void dealerTurn(); //in dealer.cc
+  void playerTurn(); //in player.cc
 };
 
 #endif

@@ -347,7 +347,7 @@ int Poker::pairCounter(int rankIn[NUMBER_OF_HAND]) {
 /*
  * This methods returns what combination the hand is
  */
-int Poker::getRank(int rankIn[5], string suitIn[5]) {
+int Poker::getTypeOfHand(int rankIn[5], string suitIn[5]) {
 
 	// return scores based on their combination
 	// 0 - high, 9 - low
@@ -419,9 +419,9 @@ void Poker::playGame() {
 	int playerCounter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int computerCounter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	playerScore = getRank(sortedPlayerRank, playerSuit);
+	playerScore = getTypeOfHand(sortedPlayerRank, playerSuit);
 
-	computerScore = getRank(sortedComputerRank, computerSuit);
+	computerScore = getTypeOfHand(sortedComputerRank, computerSuit);
 
 	// if player has better combination
 	if(playerScore < computerScore) {

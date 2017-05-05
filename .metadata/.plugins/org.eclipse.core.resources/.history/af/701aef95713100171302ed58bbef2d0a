@@ -1,0 +1,125 @@
+#include "Game.h"
+
+
+
+Game::Game() : playersHand(player), computersHand(computer) {
+
+	deck.fisherYatesShuffle();
+
+//	deck.printDeck();	// test
+
+	Card playerCards[5];
+	Card comCards[5];
+
+	for (int i = 0; i < 5; i++) {
+		playerCards[i] = deck.dealCard();
+		comCards[i] = deck.dealCard();
+	}
+
+	playersHand.setHand(playerCards);
+	computersHand.setHand(comCards);
+
+//	playersHand.printHand("p");		// test
+//	computersHand.printHand("c");	// test
+}
+
+void Game::whoIsWinner() {
+	int p = playersHand.getHandValue();
+	int c = computersHand.getHandValue();
+
+	string pokerRank[10] = {"Unchecked", "High Card", "One Pair",
+			"Two Pair",	"Three of Kind", "Straight", "Flush",
+			"Full House", "Four of Kind", "Straight Flush"};
+
+	cout << "Player: " << pokerRank[p] << "\nComputer: " << pokerRank[c] << endl;
+
+	if (p > c) {
+		cout << "Player Win!" << endl;
+	}
+	else if (p < c){
+		cout << "Computer win!" << endl;
+	}
+	else if (p == c) {
+
+		vector<int> pHigh = playersHand.getHighest();
+		vector<int>	cHigh = computersHand.getHighest();
+
+		// Case for Straight or Flush
+		if (p == 5 || p == 6) {
+			if (pHigh[0] > cHigh[0]) {
+				cout << "Player Win!" << endl;
+			}
+			else {
+				cout << "Computer win!" << endl;
+			}
+		}
+		// Case for other hands
+		else if (p !=5 && p !=6 ) {
+			// find winner by card if pairs are equal
+			if((playersHand.getHighPair() == computersHand.getHighPair()) &&
+					playersHand.getLowPair() == computersHand.getLowPair()) {
+				while (pHigh.back() == cHigh.back()) {
+					pHigh.pop_back();
+					cHigh.pop_back();
+				}
+				if(pHigh.back() > cHigh.back()) {
+					cout << "Player Win!" << endl;
+				}
+				else {
+					cout << "Computer Win!" << endl;
+				}
+			}
+			// find winner by high pair
+			else if (playersHand.getHighPair() > computersHand.getHighPair()) {
+				cout << "Player Win!" << endl;
+			}
+			else if (playersHand.getHighPair() < computersHand.getHighPair()) {
+				cout << "Computer Win!" << endl;
+			}
+			// find winner by low pair
+			else if (playersHand.getLowPair() > computersHand.getLowPair()) {
+				cout << "Player Win!" << endl;
+			}
+			else if (playersHand.getLowPair() < computersHand.getLowPair()) {
+				cout << "Computer Win!" << endl;
+			}
+			else {
+				cout << "Tied!" << endl;
+			}
+		}
+	}
+
+}
+
+void Game::dealerTurn() {
+	int c = computersHand.getHandValue();
+	vector<int> extra = computersHand.getHighest();
+
+	computersHand.printHand("Original");
+
+	//pair, two pair, three of a kind, four of a kind
+	if ( c != 1 || c != 5 || c != 6 ) {
+		for ( int i=0; i<extra.size(); i++ ) {
+			if ( extra[i] < 10 ) {
+				computersHand.tradeCard( deck, extra[i] );
+			}
+		}
+	}
+	//high card, i.e. no hand yet
+	else if ( c == 1 ) {
+		//trades the 3 lowest cards
+		if ( extra[0] < 10 ) {
+			computersHand.tradeCard( deck, extra[0] );
+		}
+		if ( extra[1] < 10 ) {
+			computersHand.tradeCard( deck, extra[1] );
+		}
+		if ( extra[2] < 10 ) {
+			computersHand.tradeCard( deck, extra[2] );
+		}
+	}
+	//if straight or flush, do nothing
+
+	computersHand.printHand("Current");
+}
+

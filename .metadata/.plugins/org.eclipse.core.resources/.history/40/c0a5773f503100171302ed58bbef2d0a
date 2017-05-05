@@ -1,0 +1,44 @@
+#include "Game.h"
+
+
+
+Game::Game() : playersHand(player), computersHand(computer) {
+
+	deck.fisherYatesShuffle();
+
+//	deck.printDeck();	// test
+
+	Card playerCards[5];
+	Card comCards[5];
+
+	for (int i = 0; i < 5; i++) {
+		playerCards[i] = deck.dealCard();
+		comCards[i] = deck.dealCard();
+	}
+
+	playersHand.setHand(playerCards);
+	computersHand.setHand(comCards);
+
+//	playersHand.printHand("p");		// test
+//	computersHand.printHand("c");	// test
+}
+
+void Game::whoIsWinner() {
+	int p = playersHand.getHandValue();
+	int c = computersHand.getHandValue();
+
+	string pokerRank[10] = {"Unchecked", "High Card", "One Pair",
+			"Two Pair",	"Three of Kind", "Straight", "Flush",
+			"Full House", "Four of Kind", "Straight Flush"};
+
+	cout << "Player: " << pokerRank[p] << "\nComputer: " << pokerRank[c] << endl;
+
+	if (p > c) {
+		cout << "Player Win!" << endl;
+	}
+	else (p < c){
+		cout << "Computer win!" << endl;
+	}
+
+}
+

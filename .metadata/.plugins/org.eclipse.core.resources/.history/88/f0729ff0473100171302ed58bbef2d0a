@@ -1,0 +1,13 @@
+#include "Hand.h"
+
+Hand::Hand (PLAYER_TYPE p) {
+	playerType = p;
+	handValue = unchecked;
+	highPair = 0;
+	lowPair = 0;
+}
+
+Game::Game() : playersHand(player), computersHand(computer) {
+
+}
+

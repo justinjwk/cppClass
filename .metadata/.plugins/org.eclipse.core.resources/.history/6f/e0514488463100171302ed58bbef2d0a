@@ -1,0 +1,33 @@
+/*
+ * Player.h
+ *
+ *  Created on: May 4, 2017
+ *      Author: Justin
+ */
+
+#ifndef PLAYER_H_
+#define PLAYER_H_
+
+#include <iostream>
+#include <string>
+#include "Card.h"
+#include "Deck.h"
+#include "Hand.h"
+
+using namespace std;
+
+class Player {
+
+public:
+
+	Player();
+	~Player();
+
+	Player(Hand h, PLAYER_TYPE p);
+
+private:
+
+};
+
+
+#endif /* PLAYER_H_ */

@@ -18,15 +18,15 @@ public:
 	static const int NUMBER_OF_HAND = 5;
 
 	// hand-ranks
-	static 	const int STRAIGHT_FLUSH = 1;
-	static const int FOUR_OF_A_KIND = 2;
-	static const int FULL_HOUSE = 3;
-	static const int FLUSH = 4;
+	static 	const int STRAIGHT_FLUSH = 9;
+	static const int FOUR_OF_A_KIND = 8;
+	static const int FULL_HOUSE = 7;
+	static const int FLUSH = 6;
 	static const int STRAIGHT = 5;
-	static const int THREE_OF_A_KIND = 6;
-	static const int TWO_PAIR = 7;
-	static const int ONE_PAIR = 8;
-	static const int HIGH_CARD = 9;
+	static const int THREE_OF_A_KIND = 4;
+	static const int TWO_PAIR = 3;
+	static const int ONE_PAIR = 2;
+	static const int HIGH_CARD = 1;
 
 	int deck[NUMBER_OF_CARDS];
 
@@ -53,7 +53,7 @@ public:
 	int straight(int rankIn[NUMBER_OF_HAND]);
 	int straightFlush(int rankIn[NUMBER_OF_HAND], std::string suitIn[NUMBER_OF_HAND]);
 	int pairCounter(int rankIn[NUMBER_OF_HAND]);
-	int getRank(int rankIn[5], std::string suitIn[5]);
+	int getTypeOfHand(int rankIn[5], std::string suitIn[5]);
 	void displayResult(int rankScore);
 	void playGame();
 

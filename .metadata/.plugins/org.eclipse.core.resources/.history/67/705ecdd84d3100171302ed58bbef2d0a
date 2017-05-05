@@ -1,0 +1,30 @@
+#include "Game.h"
+
+
+
+Game::Game() : playersHand(player), computersHand(computer) {
+
+	deck.fisherYatesShuffle();
+
+	Card playerCards[5];
+	Card comCards[5];
+
+	for (int i = 0; i < 5; i++) {
+		playerCards[i] = deck.dealCard();
+		comCards[i] = deck.dealCard();
+	}
+
+	playersHand.setHand(playerCards);
+	computersHand.setHand(comCards);
+}
+
+void Game::whoIsWinner() {
+	int p = playersHand.getHandValue();
+	int c = computersHand.getHandValue();
+
+	string pokerRank[10] = {"Unchecked", "High Card", "One Pair",
+			"Two Pair",	"Three of Kind", "Straight", "Flush",
+			"Full House", "Four of Kind", "Straight Flush"};
+	};
+}
+

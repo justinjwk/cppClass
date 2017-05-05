@@ -8,9 +8,9 @@ Elevator::Elevator() {
 
 }
 
-Elevator::Elevator(int init_floor, elevator_direction cur_direction) {
-	initial_floor = init_floor;
-	current_direction = cur_direction;
+Elevator::Elevator(int init_floor, elevator_state cur_state) {
+	current_state = cur_state;
+	current_position = init_floor * FLOOR_SPEED_PER_SEC;;
 	current_load = 0;
 }
 
@@ -22,20 +22,20 @@ int Elevator::getCurrentLoad() {
 	return current_load;
 }
 
-float Elevator::getCurrentFloor() {
-	return current_floor;
+int Elevator::getCurrentPosition() {
+	return current_position;
+}
+
+void Elevator::setCurrentPosition(int cur_pos) {
+	current_position = cur_pos;
+}
+
+int Elevator::getCurrentFloor() {
+	return current_position /FLOOR_SPEED_PER_SEC;
 }
 
 elevator_state& Elevator::getCurrentState() {
 	return current_state;
-}
-
-elevator_direction& Elevator::getCurrentDirection() {
-	return current_direction;
-}
-
-void Elevator::setCurrentDirection(elevator_direction direction){
-	current_direction = direction;
 }
 
 void Elevator::takePassengers(int num_of_passengers) {
@@ -51,23 +51,33 @@ list<Passenger>& Elevator::getPassengers() {
 }
 
 void Elevator::update() {
-	if(current_direction == UP) {
-		if(current_floor > 100.0) {
-			current_floor -= 0.1;
-			current_direction = DOWN;
-		}
-		else {
-			current_floor += 0.1;
-		}
-	}
-	else {
-		if(current_floor < 0.0) {
-			current_floor += 0.1;
-			current_direction = UP;
-		}
-		else {
-			current_floor -= 0.1;
-		}
+
+	switch (current_state) {
+		case MOVING_UP:
+			// when the elevator reaches top of the building
+			// change the direction to down
+			if((current_position / FLOOR_SPEED_PER_SEC) == 100) {
+				current_position -= 1;
+				current_state = MOVING_DOWN;
+			}
+			// or keep moving up
+			else {
+				current_position += 1;
+			}
+			break;
+		case MOVING_DOWN:
+			if(current_position == 0) {
+				current_position += 1;
+				current_state = MOVING_UP;
+			}
+			else {
+				current_position -= 1;
+			}
+			break;
+		case STOPPING:
+			break;
+		case STOPPED:
+			break;
 	}
 
 	//Iterate list of passengers
@@ -75,6 +85,10 @@ void Elevator::update() {
 	for(passengers_it= passengers.begin(); passengers_it != passengers.end(); ++passengers_it) {
 		cout << passengers_it->getDestinationFloor() << endl;
 
+		// Shift passengers between floor and elevator based on floor location
+		if (passengers_it->getDestinationFloor() == getCurrentFloor()) {
+
+		}
 		passengers_it->addTravelTime(1);
 	}
 }

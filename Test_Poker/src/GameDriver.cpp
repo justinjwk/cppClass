@@ -7,9 +7,9 @@
 int main() {
   srand(time(NULL));
   Game b;
-  b.performTurn();
-  b.simulateTurn();
-  b.determine_winner();
+  b.playerTurn();
+  b.dealerTurn();
+  b.whoIsWinner();
 
   return 0;
 }

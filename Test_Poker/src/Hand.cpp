@@ -26,7 +26,7 @@ void BubbleSort( Card h[5] )
     }
 }
 
-Hand::Hand( DeckOfCards a, OWNER o )
+Hand::Hand( DeckOfCards a, PLAYER_TYPE o )
 {
   Card temp[5];
 
@@ -37,25 +37,25 @@ Hand::Hand( DeckOfCards a, OWNER o )
     hand.push_back( temp[i] );
 
   //sets the owner of the hand, either player or computer
-  owner = o;
-  hand_value = unchecked;
+  playerType = o;
+  handValue = unchecked;
 }
 
 vector<int> Hand::getHighest()
-{ return high_list; }
+{ return highList; }
 
 int Hand::getHighPair()
-{ return high_pair; }
+{ return highPair; }
 
 int Hand::getLowPair()
-{ return low_pair; }
+{ return lowPair; }
 
 HAND_VALUE Hand::getHandValue()
-{ return hand_value; }
+{ return handValue; }
 
 void Hand::printHand( string s )
 {
-  if ( owner == player )
+  if ( playerType == player )
     cout << "\nPlayer";
   else
     cout << "\nComputer";
@@ -66,76 +66,76 @@ void Hand::printHand( string s )
 }
 
 //additional function for game.cc
-void Hand::determine_high_card()
+void Hand::findHighCard()
 {
-  //error checking
-  if ( hand_value == 0 )
-    {
-      cout << "\nError, hand_value was never checked/updated\n";
-      return;
-    }
-
-  //straight and flushes
-  else if ( hand_value == 5 || hand_value == 6 )
-    {
-      //checks for straight with Ace as low card
-      if ( hand_value == 5 && hand[4].getValue() == 14 )
-	high_list.push_back( hand[3].getValue() );
-      else
-	high_list.push_back( hand[4].getValue() );
-    }
-  //pair, two pair, three of a kind, four of a kind
-  else if ( hand_value < 5 || hand_value == 7 )
-    {
-      for ( int i=0; i<5; i++ )
+	//error checking
+	if ( handValue == 0 )
 	{
-	  //pushes non-used card into the vector first
-	  if ( hand[i].getValue() != high_pair && hand[i].getValue() != low_pair )
-	      high_list.push_back( hand[i].getValue() );
+		cout << "\nError, hand_value was never checked/updated\n";
+		return;
 	}
-    }
+
+	//straight and flushes
+	else if ( handValue == 5 || handValue == 6 )
+	{
+		//checks for straight with Ace as low card
+		if ( handValue == 5 && hand[4].getValue() == 14 )
+			highList.push_back( hand[3].getValue() );
+		else
+			highList.push_back( hand[4].getValue() );
+	}
+	//pair, two pair, three of a kind, four of a kind
+	else if ( handValue < 5 || handValue == 7 )
+	{
+		for ( int i=0; i<5; i++ )
+		{
+			//pushes non-used card into the vector first
+			if ( hand[i].getValue() != highPair && hand[i].getValue() != lowPair )
+				highList.push_back( hand[i].getValue() );
+		}
+	}
 }
 
-void Hand::check_list()
+void Hand::setTypeOfHand()
 {
   if ( four_kind_check() )
-    hand_value = four_kind;
+    handValue = four_kind;
   else if ( flush_check() )
-    hand_value = a_flush;
+    handValue = a_flush;
   else if ( straight_check() )
-    hand_value = a_straight;
+    handValue = a_straight;
   else if ( three_kind_check() )
-    hand_value = three_kind;
-  else if ( two_pair_check() )
-    hand_value = two_pair;
-  else if ( pair_check() )
-    hand_value = one_pair;
+    handValue = three_kind;
+  else if ( isTwoPair() )
+    handValue = two_pair;
+  else if ( isOnePair() )
+    handValue = one_pair;
   else
-    hand_value = high_card;
+    handValue = high_card;
 
-  determine_high_card();
+  findHighCard();
 }
 
-bool Hand::pair_check()
+bool Hand::isOnePair()
 {
-  for ( int i=0; i<5; i++ )
-    {
-      for ( int j=0; j<5; j++ )
+	for ( int i=0; i<5; i++ )
 	{
-	  if ( i != j )
-	    {
-	      if ( hand[i].getValue() == hand[j].getValue() )
+		for ( int j=0; j<5; j++ )
 		{
-		  high_pair = hand[i].getValue();
-		  return true;
+			if ( i != j )
+			{
+				if ( hand[i].getValue() == hand[j].getValue() )
+				{
+					highPair = hand[i].getValue();
+					return true;
+				}
+			}
 		}
-	    }
 	}
-    }
-  return false;
+	return false;
 }
 
-bool Hand::two_pair_check()
+bool Hand::isTwoPair()
 {
   Card first_card, second_card; //stores first pair (obviously two cards)
   int i, j;
@@ -165,13 +165,13 @@ bool Hand::two_pair_check()
 		  {
 		    if ( hand[i].getValue() > first_card.getValue() )
 		      {
-			high_pair = hand[i].getValue();
-			low_pair = first_card.getValue();
+			highPair = hand[i].getValue();
+			lowPair = first_card.getValue();
 		      }
 		    else
 		      {
-			high_pair = first_card.getValue();
-			low_pair = hand[i].getValue();
+			highPair = first_card.getValue();
+			lowPair = hand[i].getValue();
 		      }
 		    return true;
 		  }
@@ -187,21 +187,21 @@ bool Hand::three_kind_check()
   if ( hand[0].getValue() == hand[1].getValue() &&
        hand[1].getValue() == hand[2].getValue() )
     {
-      high_pair = hand[2].getValue();
+      highPair = hand[2].getValue();
       return true;
     }
   //234
   if ( hand[1].getValue() == hand[2].getValue() &&
        hand[2].getValue() == hand[3].getValue() )
     {
-      high_pair = hand[3].getValue();
+      highPair = hand[3].getValue();
       return true;
     }
   //345
   if ( hand[2].getValue() == hand[3].getValue() &&
        hand[3].getValue() == hand[4].getValue() )
     {
-      high_pair = hand[4].getValue();
+      highPair = hand[4].getValue();
       return true;
     }
 
@@ -215,12 +215,12 @@ bool Hand::four_kind_check()
     {
       if ( hand[0].getValue() == hand[1].getValue() )
 	{
-	  high_pair = hand[2].getValue();
+	  highPair = hand[2].getValue();
 	  return true;
 	}
       if ( hand[4].getValue() == hand[1].getValue() )
 	{
-	  high_pair = hand[2].getValue();
+	  highPair = hand[2].getValue();
 	  return true;
 	}
     }

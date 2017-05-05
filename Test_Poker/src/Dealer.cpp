@@ -9,7 +9,7 @@ using namespace std;
 //using BubbleSort from hand.cc
 void BubbleSort( Card h[5] );
 
-void Hand::tradeCard( DeckOfCards &the_deck, int n )
+void Hand::tradeCard( DeckOfCards &deck, int n )
 {
   Card temp[5];
 
@@ -17,7 +17,7 @@ void Hand::tradeCard( DeckOfCards &the_deck, int n )
     {
       //draws the new card to replace the old one
       if ( hand[i].getValue() == n )
-  temp[i] = the_deck.dealCard();
+  temp[i] = deck.dealCard();
       else
 	temp[i] = hand[i];
     }
@@ -26,12 +26,12 @@ void Hand::tradeCard( DeckOfCards &the_deck, int n )
   setHand( temp );
 }
 
-void Game::simulateTurn()
+void Game::dealerTurn()
 {
-  int c = computers_hand.getHandValue();
-  vector<int> extra = computers_hand.getHighest();
+  int c = computersHand.getHandValue();
+  vector<int> extra = computersHand.getHighest();
 
-  computers_hand.printHand("Original");
+  computersHand.printHand("Original");
 
   //pair, two pair, three of a kind, four of a kind
   if ( c != 1 || c != 5 || c != 6 )
@@ -39,7 +39,7 @@ void Game::simulateTurn()
       for ( int i=0; i<extra.size(); i++ )
 	{
 	  if ( extra[i] < 10 )
-	    computers_hand.tradeCard( game_deck, extra[i] );
+	    computersHand.tradeCard( deck, extra[i] );
 	}
     }
   //high card, i.e. no hand yet
@@ -47,13 +47,13 @@ void Game::simulateTurn()
     {
       //trades the 3 lowest cards
       if ( extra[0] < 10 )
-	computers_hand.tradeCard( game_deck, extra[0] );
+	computersHand.tradeCard( deck, extra[0] );
       if ( extra[1] < 10 )
-	computers_hand.tradeCard( game_deck, extra[1] );
+	computersHand.tradeCard( deck, extra[1] );
       if ( extra[2] < 10 )
-	computers_hand.tradeCard( game_deck, extra[2] );
+	computersHand.tradeCard( deck, extra[2] );
     }
   //if straight or flush, do nothing
 
-  computers_hand.printHand("Current");
+  computersHand.printHand("Current");
 }
