@@ -1,3 +1,6 @@
+#include <iostream>
+#include <deque>
+#include "Passenger.h"
 #include "Floor.h"
 
 Floor::Floor() {
@@ -18,5 +21,7 @@ void Floor::addPassenger(Passenger& p) {
 }
 
 void Floor::update() {
-
+	for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+		it->addWaitTime(1);
+	}
 }

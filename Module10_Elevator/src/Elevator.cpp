@@ -1,6 +1,8 @@
 #include <iostream>
 #include <list>
+#include <queue>
 #include "Elevator.h"
+#include "Common.h"
 
 using namespace std;
 
@@ -38,6 +40,10 @@ elevator_state& Elevator::getCurrentState() {
 	return current_state;
 }
 
+direction& Elevator::getCurrentDirection() {
+	return current_direction;
+}
+
 void Elevator::takePassengers(int num_of_passengers) {
 	current_load += num_of_passengers;
 }
@@ -51,12 +57,12 @@ list<Passenger>& Elevator::getPassengers() {
 }
 
 void Elevator::update() {
-
+	// Update elevator state
 	switch (current_state) {
 		case MOVING_UP:
 			// when the elevator reaches top of the building
 			// change the direction to down
-			if((current_position / FLOOR_SPEED_PER_SEC) == 100) {
+			if((current_position / FLOOR_SPEED_PER_SEC) == 99) {
 				current_position -= 1;
 				current_state = MOVING_DOWN;
 			}
@@ -80,15 +86,35 @@ void Elevator::update() {
 			break;
 	}
 
-	//Iterate list of passengers
-	list<Passenger>::iterator passengers_it;
-	for(passengers_it= passengers.begin(); passengers_it != passengers.end(); ++passengers_it) {
-		cout << passengers_it->getDestinationFloor() << endl;
+	// Give passengers a chance to get off
+	for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it != passengers.end(); ++passengers_it) {
 
-		// Shift passengers between floor and elevator based on floor location
-		if (passengers_it->getDestinationFloor() == getCurrentFloor()) {
+		// Passenger arrived at destination floor and getting out
+		if (pasengers_it->getDestinationFloor() == getCurrentFloor()) {
 
+			// Update wait and travel times
+			wait_times.push_back(passengers_it->getWaitTime());
+
+			travel_times.push_back(passengers_it->getTravelTime());
+
+			passengers.erase(passengers_it);
 		}
+
 		passengers_it->addTravelTime(1);
+	}
+
+	// Give passengers a chance to get on
+	// if current capacity allows
+	if(current_position % FLOOR_SPEED_PER_SEC == 0) {
+
+		deque<Passenger> ps = floors.at(getCurrentFloor()).getPassengers();
+		for (deque<Passenger>::iterator passenger = ps.begin(); passenger != ps.end(); ++passenger) {
+			if (getCurrentLoad() < MAX_LOAD) {
+				if (passenger->getDirection() == getCurrentDirection()) {
+					passengers.push_back(*passenger);
+					ps.erase(passenger);
+				}
+			}
+		}
 	}
 }

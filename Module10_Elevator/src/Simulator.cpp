@@ -12,6 +12,7 @@
 #include "Elevator.h"
 #include "Passenger.h"
 #include "Floor.h"
+#include "Common.h"
 
 using namespace std;
 
@@ -68,16 +69,9 @@ map<int, map<string, int> > getData() {
 	return records;
 }
 
-vector<Floor> floors;
-list<Elevator> elevators;
-list<int> wait_times;
-list<int> travel_times;
-map<int, queue<Passenger> > building;
-map<int, map<string, int> > records = getData();
-
 int main() {
 
-	// Initialize all 100 floors
+	// Initialize all 100 floors (0 - 99)
 	for (int floor_number = 0; floor_number < 100; floor_number++) {
 		floors.push_back(Floor());
 	}
@@ -107,15 +101,19 @@ int main() {
 	elevators.push_front(e3);
 	elevators.push_front(e4);
 
+	map<int, map<string, int> >  records = getData();
+
 	// Start simulation
 	for (int start_time = 0; start_time < 15216; start_time++) {
+
+		// At the proper start time, create passenger waiting at the start floor
 		map<int, map<string, int> >::iterator records_it = records.find(start_time);
 		if(records_it != records.end()) {
 			//Found start time
 			//Create passenger waiting at start floor
 			int start_floor = records_it->second["start_floor"];
 			int end_floor = records_it->second["end_floor"];
-			Passenger p(end_floor);
+			Passenger p(start_floor, end_floor);
 
 			floors[start_floor].addPassenger(p);
 		}
@@ -125,15 +123,24 @@ int main() {
 			it->update();
 		}
 
-		// Update each floor
+		// Update passengers in each floor
 		for (vector<Floor>::iterator it = floors.begin(); it != floors.end(); ++it) {
+			it->update();
+		}
+	}
 
+	// Tally times from every passenger at each floor
+	for (vector<Floor>::iterator it = floors.begin(); it != floors.end(); ++it) {
+		deque<Passenger> passengers = it->getPassengers();
+
+		for (deque<Passenger>::iterator itt = passengers.begin(); itt != passengers.end(); ++itt) {
+			wait_times.push_back(itt->getWaitTime());
 		}
 	}
 
 	// Calculate average wait time
 	int total_wait_time = 0;
-	wait_times.push_back(3);
+	//wait_times.push_back(3);
 	for (list<int>::iterator it = wait_times.begin(); it != wait_times.end(); ++it) {
 		total_wait_time += *it;
 	}

@@ -14,15 +14,17 @@ public:
 
 	Elevator();
 	Elevator(int, elevator_state);
-	~Elevator();
+	virtual ~Elevator();
 
 	static const int MAX_LOAD = 8;
+	static const int FLOOR_SPEED_PER_SEC = 10;
 
 	int getCurrentLoad();
 	int getCurrentPosition();
 	void setCurrentPosition(int);
 	int getCurrentFloor();
 	elevator_state& getCurrentState();
+	direction& getCurrentDirection();
 
 	void takePassengers(int num_of_passengers = 1);
 	void removePassengers(int num_of_passengers = 1);
@@ -34,12 +36,10 @@ private:
 	int current_floor;
 	int current_position;
 	elevator_state current_state;
-
+	direction current_direction;
 	list<Passenger> passengers;
 
 	int initial_floor;
-
-	static const int FLOOR_SPEED_PER_SEC = 10;
 
 };
 

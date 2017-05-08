@@ -5246,3 +5246,243 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Game.o" "..\\src\\Game.cpp"
                    ^
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Deck.o" "..\\src\\Deck.cpp" 
 g++ -o Test_Poker_Final.exe "src\\Module12_PorkerGame.o" "src\\Hand.o" "src\\Game.o" "src\\Deck.o" "src\\Card.o" 
+Info: Nothing to build for Module10_Elevator
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+01:50:57 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+..\src\Elevator.cpp:43:1: error: 'direction' does not name a type
+ direction& Elevator::getCurrentDirection() {
+ ^
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:90:12: error: 'Passneger' was not declared in this scope
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+            ^
+..\src\Elevator.cpp:90:21: error: template argument 1 is invalid
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                     ^
+..\src\Elevator.cpp:90:21: error: template argument 2 is invalid
+..\src\Elevator.cpp:90:33: error: expected ';' before 'passengers_it'
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                 ^
+..\src\Elevator.cpp:90:33: error: 'passengers_it' was not declared in this scope
+..\src\Elevator.cpp:90:83: error: expected ')' before '~' token
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                   ^
+..\src\Elevator.cpp:90:84: error: expected primary-expression before '=' token
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                    ^
+..\src\Elevator.cpp:90:24: warning: unused variable 'iterator' [-Wunused-variable]
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                        ^
+..\src\Elevator.cpp:90:106: error: 'passengers_it' was not declared in this scope
+  for (list<Passneger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                          ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+02:14:03 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+In file included from ..\src\Elevator.cpp:4:0:
+..\src\Elevator.h:27:2: error: 'direction' does not name a type
+  direction& getCurrentDirection();
+  ^
+..\src\Elevator.cpp:43:1: error: 'direction' does not name a type
+ direction& Elevator::getCurrentDirection() {
+ ^
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:90:69: error: could not convert 'passengers_it' from 'std::__cxx11::list<Passenger>::iterator {aka std::_List_iterator<Passenger>}' to 'bool'
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                     ^
+..\src\Elevator.cpp:90:83: error: expected ';' before '~' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                   ^
+..\src\Elevator.cpp:90:84: error: expected primary-expression before '=' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                    ^
+..\src\Elevator.cpp:90:102: error: expected ')' before ';' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                      ^
+..\src\Elevator.cpp:90:106: error: name lookup of 'passengers_it' changed for ISO 'for' scoping [-fpermissive]
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                          ^
+..\src\Elevator.cpp:90:106: note: (if you use '-fpermissive' G++ will accept your code)
+..\src\Elevator.cpp:90:119: error: expected ';' before ')' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                                       ^
+..\src\Elevator.cpp:120:1: error: expected '}' at end of input
+ }
+ ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+02:14:27 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+..\src\Elevator.cpp: In member function 'direction& Elevator::getCurrentDirection()':
+..\src\Elevator.cpp:44:9: error: 'current_direction' was not declared in this scope
+  return current_direction;
+         ^
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:90:69: error: could not convert 'passengers_it' from 'std::__cxx11::list<Passenger>::iterator {aka std::_List_iterator<Passenger>}' to 'bool'
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                     ^
+..\src\Elevator.cpp:90:83: error: expected ';' before '~' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                   ^
+..\src\Elevator.cpp:90:84: error: expected primary-expression before '=' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                    ^
+..\src\Elevator.cpp:90:102: error: expected ')' before ';' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                      ^
+..\src\Elevator.cpp:90:106: error: name lookup of 'passengers_it' changed for ISO 'for' scoping [-fpermissive]
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                          ^
+..\src\Elevator.cpp:90:106: note: (if you use '-fpermissive' G++ will accept your code)
+..\src\Elevator.cpp:90:119: error: expected ';' before ')' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                                       ^
+..\src\Elevator.cpp:120:1: error: expected '}' at end of input
+ }
+ ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+06:38:30 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+In file included from ..\src\Elevator.cpp:4:0:
+..\src\Elevator.h:43:18: error: redeclaration of 'std::__cxx11::list<Passenger> Elevator::passengers'
+  list<Passenger> passengers;
+                  ^
+..\src\Elevator.h:40:18: note: previous declaration 'std::__cxx11::list<Passenger> Elevator::passengers'
+  list<Passenger> passengers;
+                  ^
+..\src\Elevator.h:45:6: error: redeclaration of 'int Elevator::initial_floor'
+  int initial_floor;
+      ^
+..\src\Elevator.h:42:6: note: previous declaration 'int Elevator::initial_floor'
+  int initial_floor;
+      ^
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:90:69: error: could not convert 'passengers_it' from 'std::__cxx11::list<Passenger>::iterator {aka std::_List_iterator<Passenger>}' to 'bool'
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                     ^
+..\src\Elevator.cpp:90:83: error: expected ';' before '~' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                   ^
+..\src\Elevator.cpp:90:84: error: expected primary-expression before '=' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                    ^
+..\src\Elevator.cpp:90:102: error: expected ')' before ';' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                      ^
+..\src\Elevator.cpp:90:106: error: name lookup of 'passengers_it' changed for ISO 'for' scoping [-fpermissive]
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                          ^
+..\src\Elevator.cpp:90:106: note: (if you use '-fpermissive' G++ will accept your code)
+..\src\Elevator.cpp:90:119: error: expected ';' before ')' token
+  for (list<Passenger>::iterator passengers_it = passengers.begin(); passengers_it ~= passengers.end(); ++passengers_it) {
+                                                                                                                       ^
+..\src\Elevator.cpp:120:1: error: expected '}' at end of input
+ }
+ ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+06:39:07 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+In file included from ..\src\Elevator.cpp:4:0:
+..\src\Elevator.h:43:18: error: redeclaration of 'std::__cxx11::list<Passenger> Elevator::passengers'
+  list<Passenger> passengers;
+                  ^
+..\src\Elevator.h:40:18: note: previous declaration 'std::__cxx11::list<Passenger> Elevator::passengers'
+  list<Passenger> passengers;
+                  ^
+..\src\Elevator.h:45:6: error: redeclaration of 'int Elevator::initial_floor'
+  int initial_floor;
+      ^
+..\src\Elevator.h:42:6: note: previous declaration 'int Elevator::initial_floor'
+  int initial_floor;
+      ^
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:93:7: error: 'pasengers_it' was not declared in this scope
+   if (pasengers_it->getDestinationFloor() == getCurrentFloor()) {
+       ^
+..\src\Elevator.cpp:110:67: error: conversion from 'std::queue<Passenger>' to non-scalar type 'std::deque<Passenger, std::allocator<Passenger> >' requested
+   deque<Passenger> ps = floors.at(getCurrentFloor()).getPassengers();
+                                                                   ^
+..\src\Elevator.cpp:113:20: error: 'class Passenger' has no member named 'getDirection'
+     if (passenger->getDirection() == getCurrentDirection()) {
+                    ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+06:41:51 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Simulator.o" "..\\src\\Simulator.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:93:7: error: 'pasengers_it' was not declared in this scope
+   if (pasengers_it->getDestinationFloor() == getCurrentFloor()) {
+       ^
+..\src\Elevator.cpp:110:67: error: conversion from 'std::queue<Passenger>' to non-scalar type 'std::deque<Passenger, std::allocator<Passenger> >' requested
+   deque<Passenger> ps = floors.at(getCurrentFloor()).getPassengers();
+                                                                   ^
+..\src\Elevator.cpp:113:20: error: 'class Passenger' has no member named 'getDirection'
+     if (passenger->getDirection() == getCurrentDirection()) {
+                    ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+06:50:57 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Floor.o" "..\\src\\Floor.cpp" 
+..\src\Floor.cpp: In member function 'virtual void Floor::update()':
+..\src\Floor.cpp:24:50: error: 'class std::queue<Passenger>' has no member named 'begin'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                  ^
+..\src\Floor.cpp:24:76: error: 'class std::queue<Passenger>' has no member named 'end'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                                            ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+06:52:31 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Elevator.o" "..\\src\\Elevator.cpp" 
+..\src\Elevator.cpp: In member function 'virtual void Elevator::update()':
+..\src\Elevator.cpp:93:7: error: 'pasengers_it' was not declared in this scope
+   if (pasengers_it->getDestinationFloor() == getCurrentFloor()) {
+       ^
+..\src\Elevator.cpp:110:67: error: conversion from 'std::queue<Passenger>' to non-scalar type 'std::deque<Passenger, std::allocator<Passenger> >' requested
+   deque<Passenger> ps = floors.at(getCurrentFloor()).getPassengers();
+                                                                   ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+07:04:45 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Simulator.o" "..\\src\\Simulator.cpp" 
+..\src\Simulator.cpp: In function 'int main()':
+..\src\Simulator.cpp:134:50: error: conversion from 'std::queue<Passenger>' to non-scalar type 'std::deque<Passenger, std::allocator<Passenger> >' requested
+   deque<Passenger> passengers = it->getPassengers();
+                                                  ^
+Info: Nothing to build for Module12_PorkerGame
+Info: Nothing to build for Module4_Poker
+Info: Nothing to build for Test_Poker_Final
+07:04:54 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Floor.o" "..\\src\\Floor.cpp" 
+..\src\Floor.cpp: In member function 'virtual void Floor::update()':
+..\src\Floor.cpp:24:50: error: 'class std::queue<Passenger>' has no member named 'begin'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                  ^
+..\src\Floor.cpp:24:76: error: 'class std::queue<Passenger>' has no member named 'end'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                                            ^

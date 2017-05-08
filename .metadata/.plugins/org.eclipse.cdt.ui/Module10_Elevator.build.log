@@ -1,1 +1,13 @@
-Info: Nothing to build for Module10_Elevator
+07:04:54 **** Incremental Build of configuration Debug for project Module10_Elevator ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Floor.o" "..\\src\\Floor.cpp" 
+..\src\Floor.cpp: In member function 'virtual void Floor::update()':
+..\src\Floor.cpp:24:50: error: 'class std::queue<Passenger>' has no member named 'begin'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                  ^
+..\src\Floor.cpp:24:76: error: 'class std::queue<Passenger>' has no member named 'end'
+  for (deque<Passenger>::iterator it = passengers.begin(); it != passengers.end(); ++it) {
+                                                                            ^
+
+07:04:54 Build Finished (took 392ms)
+
